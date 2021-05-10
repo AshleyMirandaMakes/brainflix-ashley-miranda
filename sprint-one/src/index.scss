@@ -1,0 +1,9 @@
+@use './partials/fonts.scss' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
