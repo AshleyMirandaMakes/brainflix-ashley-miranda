@@ -1,0 +1,27 @@
+//breakpoints
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1280px;
+
+// colours 
+$color-white: #FFFFFF;
+$color-alabaster: #FAFAFA;
+$color-mercury: #E1E1E1;
+$color-silver: #AFAFAF;
+$color-lightblue-brainflix: #0095FF;
+$color-skyblue-brainflix: #0065AD;
+$color-oceanblue-instock: #004892;
+$color-darkblue-instock: #002F5F;
+$color-black: #323232;
+//$color-dark-black : #000000;
+
+// Global:
+// #323232 - Paragraph text
+// #AFAFAF - Text label style
+// #E1E1E1 - Text field border #FAFAFA - Text field background fill
+// Instock Colors:
+// #323232 - Navigation background fill #004892 - Primary CTA & Text link #002F5F - Primary CTA Hover
+// BrainFlix:
+// #323232 - Navigation background fill #0095FF - Primary CTA & Text link #0065AD - Primary CTA Hover
+// BandSite:
+// #323232 - Navigation background fill #323232 - Primary CTA
+// #0065AD - Primary CTA Hover
