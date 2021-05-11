@@ -1,4 +1,7 @@
 @use './partials/fonts.scss' as *;
+@use './partials/variables.scss' as *;
+@use './partials/mixins.scss' as *;
+@use './partials/resets.scss' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;

@@ -1,4 +1,5 @@
 import './App.scss';
+import '../src/partials/_resets.scss'
 
 function App() {
   return (
