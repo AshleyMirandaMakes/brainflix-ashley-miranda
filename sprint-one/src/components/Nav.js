@@ -1,21 +1,28 @@
 //import React from 'react';
+import './Nav.scss';
 import Logo from '../assets/logos/Logo-brainflix.svg';
 import UserIcon from '../assets/images/Mohan-muruge.jpg'
-import UploadIcon from '../assets/icons/Icon-upload.svg';
-import SearchIcon from '../assets/icons/Icon-search.svg';
+// import UploadIcon from '../assets/icons/Icon-upload.svg';
+// import SearchIcon from '../assets/icons/Icon-search.svg';
+
 
 const Button = (props) => {
+  console.log(props.icon);
     return (
-      <button>{props.icon}{props.name}</button>
+      <button className="nav__button">{props.icon}{props.name}</button>
     );
 }
+
+
 
 const SearchBar = (props) => {
   return (
     <input 
+    className="nav__searchbar"
     type="text" 
-    placeholder={props.icon} 
+    src={props.i}
     value={props.value}
+    onChange="defaultValue"
     />
   );
 }
@@ -23,7 +30,7 @@ const SearchBar = (props) => {
 const UserImage = (props) => {
   return (
     <div className="nav__image">
-      <img src={props.image} alt="user's image"></img>
+      <img className="nav__image" src={props.image} alt="user's image"></img>
     </div>
   );
 }
@@ -40,10 +47,12 @@ const UserImage = (props) => {
 function Nav() {
   return (
     <nav className="nav">
-      <img src={Logo} alt="Brainflix Logo"/>
-      <SearchBar placeholder={SearchIcon} value="Search"/>
-      <Button icon={UploadIcon} name="UPLOAD"/>
-      <UserImage image={UserIcon} />
+      <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
+      <SearchBar value="Search"/>
+      <div className="nav__bottom">
+        <Button name="UPLOAD"/>
+        <UserImage src={UserIcon} image={UserIcon} />
+      </div>
     </nav>
   );
 }
