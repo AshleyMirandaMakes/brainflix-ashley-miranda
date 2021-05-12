@@ -2,12 +2,13 @@ import VideoFeature from './VideoFeature';
 import './VideoDisplay.scss';
 
 function VideoDisplay(props) {
-  console.log('VideoFeature props', props);
-  //check before bed
 
   return (
+    // <div>
+    //   {props.videoDetails[0].channel}
+    // </div>
     <div className="videoDisplay">{
-      props.videosDetails
+      props.videoDetails
         .filter((videoDetail) => videoDetail.id !== "1af0jruup5gu") 
         .map((videoDetail) => (
           <VideoFeature

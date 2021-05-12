@@ -2,6 +2,8 @@ import './VideoFeature.scss';
 
 function VideoFeature(props) {
   console.log(props)
+  //check
+  
   return (
     <div className="videoFeature">
       <img className="videoFeature__image" src={props.image} alt={props.title} />

@@ -1,7 +1,7 @@
 import './VideoItem.scss';
 
 function VideoItem(props) {
-  console.log(props)
+  // console.log(props)
   return (
     <li className="videoItem">
       <img className="videoItem__image" src={props.image} alt={props.title} />

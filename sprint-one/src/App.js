@@ -2,7 +2,7 @@ import './App.scss';
 import Nav from './components/Nav';
 import '../src/partials/_resets.scss';
 import VideoList from './components/VideoList';
-import VideoDisplay from './components/VideoDetails;'
+import VideoDisplay from './components/VideoDisplay';
 
 //-Data
 import videos from '../src/assets/data/videos.json';
