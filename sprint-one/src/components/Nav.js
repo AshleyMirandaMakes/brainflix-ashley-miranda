@@ -7,7 +7,7 @@ import UserIcon from '../assets/images/Mohan-muruge.jpg'
 
 
 const Button = (props) => {
-  console.log(props.icon);
+  // console.log(props.icon);
     return (
       <button className="nav__button">{props.icon}{props.name}</button>
     );
