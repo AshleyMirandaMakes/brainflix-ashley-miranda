@@ -16,8 +16,10 @@ function VideoList(props) {
       props.videos
         .filter((video) => video.id !== "1af0jruup5gu")
         .map((video) => (
-          <VideoItem
+          <VideoItem 
+            setCurrentVideo={props.setCurrentVideo}
             key={video.id}
+            id={video.id}
             title={video.title}
             channel={video.channel}
             image={video.image}

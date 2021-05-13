@@ -13,33 +13,43 @@ import videoDetails from '../src/assets/data/video-details.json';
 class App extends Component {
   state = {
     videos : videos,
-    videoDetails: videoDetails
+    videoDetails: videoDetails,
+    currentVideoIndex : 0,
+  };
+
+  
+
+
+
+  setCurrentVideo = (index) => {
+  console.log("this is the currentSetVideo index" ,index)
+  this.setState({currentVideoIndex : index})
   }
 
+
+
+
   render() {
-    console.log(this.state) 
-    console.log(this.state.videoDetails[0].image)
-    //this is equal to the videos array
-    // console.log(videos)
+
   return (
     <div className="App">
       <Nav />
-      <PlayingVideo videoDetails={videoDetails[0]}/>
+      <FeaturedVideo videoDetails={videoDetails[this.state.currentVideoIndex]}/>
       {/* <VideoDisplay videoDetails={videoDetails} /> */}
       <div className="videoList__container">
         <h4 className="videoList__title">NEXT VIDEO</h4>
-        <VideoList videos={videos}/>
+        <VideoList videos={videos} setCurrentVideo={this.setCurrentVideo}/>
       </div>
     </div>
   );
   }
 }
 
-class PlayingVideo extends Component {
+class FeaturedVideo extends Component {
   render() {
     return (
       <div>
-        <FeaturedVideo videoDetails={this.props.videoDetails}/>
+        <PlayingVideo videoDetails={this.props.videoDetails}/>
         <Comments videoDetails={this.props.videoDetails}/>
       </div>
     )
@@ -47,7 +57,7 @@ class PlayingVideo extends Component {
 }
 
 
-class FeaturedVideo extends Component {
+class PlayingVideo extends Component {
   render() {
     return (
       <div className="playingVideo">
@@ -71,12 +81,24 @@ class FeaturedVideo extends Component {
 
 class Comments extends Component {
   render() {
+    // let { comments, id, likes, name, timestamp } = this.props.videoDetails;
+    // console.log(comments)
     return(
-      <section className="comments">
-          <h3 className="comments__header">3 Comments</h3>
+      <section className="comment">
+          <h3 className="comment__title">3 Comments</h3>
           <CommentForm videoDetails={this.props.videoDetails.comments}/>
-          <article className="playingVideo__comments">
-          </article>
+          <ul className="comment__container">
+          {this.props.videoDetails.comments.map((commentObj) => ( 
+            <li className="comment__card">
+            <div className="comment__image"></div>
+            <div className="comment__content">
+              <h4 className="comment__content--top">{commentObj.name}</h4>
+              <h4 className="comment__content--top">{commentObj.timestamp}</h4>
+            </div>
+            <p className="comment__comment">{commentObj.comment}</p>
+            </li>
+          ))}
+          </ul>
       </section>
     )
   }
@@ -84,16 +106,17 @@ class Comments extends Component {
 
 class CommentForm extends Component {
 render () {
-  console.log(this.props.videoDetails)
-  //doesn't gives me the comments
   return(
-    <div className="form__container">
-    <div className="form__image"></div>
-    <form>
-      <input type="text" name="message" placeholder="That was easily"></input>
-      <button>COMMENT</button>
-    </form>
-  </div>
+    <section className="form">
+      <div className="form__container">
+        <div className="form__image"></div>
+        <form className="form__content">
+          <label className="form__title">JOIN THE CONVERSATION</label>
+          <input className="form__input" type="text" name="message" placeholder="That was easily the most spectacular BMX moment ever."></input>
+          <button className="form__button">COMMENT</button>
+        </form>
+      </div>
+    </section>
   )
 }
 
