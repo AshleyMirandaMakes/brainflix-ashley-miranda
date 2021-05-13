@@ -1,9 +1,15 @@
 import VideoItem from './VideoItem';
 import './VideoList.scss';
+import React, { Component } from 'react';
+
+// class VideoList extends Component {
+  
+
+
+
+// }
 
 function VideoList(props) {
-  console.log('VideoList props', props);
-  //works
 
   return (
     <ul className="videoList">{

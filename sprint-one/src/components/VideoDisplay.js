@@ -1,15 +1,16 @@
 import VideoFeature from './VideoFeature';
 import './VideoDisplay.scss';
+import { Component } from 'react';
 
 function VideoDisplay(props) {
 
-  return (
-    // <div>
-    //   {props.videoDetails[0].channel}
-    // </div>
+  // doNotDisplay()
+  // return (
+
     <div className="videoDisplay">{
       props.videoDetails
-        .filter((videoDetail) => videoDetail.id !== "1af0jruup5gu") 
+        .filter((videoDetail) => videoDetail.id !== "1aivjruutn6a" || "1ainjruutd1j" || "1a3cjruucpf7" 
+        || "1am3jruuwagz" || "1akljruuvhzt" || "1ae5jruuoc4q" ||"1a4kjruuedd9" || "1a8qhruuzky3" ) 
         .map((videoDetail) => (
           <VideoFeature
             key={videoDetail.id}
@@ -23,7 +24,6 @@ function VideoDisplay(props) {
           />
         ))}
     </div>
-  );
-}
+        }
 
 export default VideoDisplay;
