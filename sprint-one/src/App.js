@@ -4,6 +4,7 @@ import '../src/partials/_resets.scss';
 import VideoList from './components/VideoList';
 import VideoDisplay from './components/VideoDisplay';
 import React, { Component } from 'react';
+import FeaturedVideo from './components/FeaturedVideo/FeaturedVideo';
 
 //-Data
 import videos from '../src/assets/data/videos.json';
@@ -16,7 +17,6 @@ class App extends Component {
     videoDetails,
     currentVideoIndex : 0,
     currentVideoId : "1af0jruup5gu",
-    // currentVideoIndex
   };
 
   setCurrentVideo = (id) => {
@@ -28,50 +28,23 @@ class App extends Component {
 
     let clickedVideo = newVideos[videoIndex]
 
-    // let updatedVideos = newVideos.filter(video => id !== video.id)
-
-
-    // let currentVideoIndex = newVideos.find((video) => video.id === id);
-    // console.log("current Video Index",currentVideoIndex );
 
      let currentVideoIndex = newVideos.find((videoIndex) => id !== videoIndex);
     console.log("current Video Index",currentVideoIndex );
+  
 
-
+    //frankly I'm not sure what tis is doing anymore but it throws a fir id I delete anything
     let updatedVideos = newVideos.filter(currentVideoIndex => id !== videoIndex)
     console.log(updatedVideos)
 
-    console.log(videoIndex);
-   
-    //shows all videos
-
     updatedVideos.unshift(clickedVideo);
-    // pushes the video clicked on top first index of the array
-    //but original of1 does not display on the page - could this be because of slice in the component?
-
-
-    //ideas - maybe .shift the top item in the array and return it to the index of the clicked video?
-
   
     this.setState({videos: updatedVideos, currentVideoIndex : videoIndex, currentVideoId: id,
     })
-
-    // this.setState({videos : !videoIndex })
   }
 
-
-
-
-  // setCurrentVideo = (index) => {
-  // console.log("this is the currentSetVideo index" ,index)
-  // this.setState({currentVideoIndex : index})
-  // }
-
-
-
-
   render() {
-    console.log("render")
+    // console.log("render")
 
   return (
     <div className="App">
@@ -87,39 +60,39 @@ class App extends Component {
   }
 }
 
-class FeaturedVideo extends Component {
-  render() {
-    return (
-      <div>
-        <PlayingVideo videoDetails={this.props.videoDetails}/>
-        <Comments videoDetails={this.props.videoDetails}/>
-      </div>
-    )
-  }
-}
+// class FeaturedVideo extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <PlayingVideo videoDetails={this.props.videoDetails}/>
+//         <Comments videoDetails={this.props.videoDetails}/>
+//       </div>
+//     )
+//   }
+// }
 
 
-class PlayingVideo extends Component {
-  render() {
-    return (
-      <div className="playingVideo">
-        <img className="playingVideo__image" src={this.props.videoDetails.image} alt={this.props.videoDetails.title}/>
-          <section className="playingVideo__container">
-          <h1 className="playingVideo__title">{this.props.videoDetails.title}</h1>
-          <div className="playingVideo__subheadings">
-            <h3 className="playingVideo__channel">By {this.props.videoDetails.channel}</h3>
-            <h3 className="playingVideo__timestamp">{this.props.videoDetails.timestamp}</h3>
-          </div>
-          <div className="playingVideo__subheadings">
-            <h3 className="playingVideo__views">{this.props.videoDetails.views}</h3>
-            <h3 className="playingVideo__likes">{this.props.videoDetails.likes}</h3>
-          </div>
-          <p className="playingVideo__description">{this.props.videoDetails.description}</p>
-          </section>
-    </div>
-    )
-  }
-}
+// class PlayingVideo extends Component {
+//   render() {
+//     return (
+//       <div className="playingVideo">
+//         <img className="playingVideo__image" src={this.props.videoDetails.image} alt={this.props.videoDetails.title}/>
+//           <section className="playingVideo__container">
+//           <h1 className="playingVideo__title">{this.props.videoDetails.title}</h1>
+//           <div className="playingVideo__subheadings">
+//             <h3 className="playingVideo__channel">By {this.props.videoDetails.channel}</h3>
+//             <h3 className="playingVideo__timestamp">{this.props.videoDetails.timestamp}</h3>
+//           </div>
+//           <div className="playingVideo__subheadings">
+//             <h3 className="playingVideo__views">{this.props.videoDetails.views}</h3>
+//             <h3 className="playingVideo__likes">{this.props.videoDetails.likes}</h3>
+//           </div>
+//           <p className="playingVideo__description">{this.props.videoDetails.description}</p>
+//           </section>
+//     </div>
+//     )
+//   }
+// }
 
 class Comments extends Component {
   render() {
