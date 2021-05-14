@@ -1,14 +1,15 @@
-import './App.scss';
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 import '../src/partials/_resets.scss';
 import VideoList from './components/VideoList';
-import VideoDisplay from './components/VideoDisplay';
 import React, { Component } from 'react';
 import FeaturedVideo from './components/FeaturedVideo/FeaturedVideo';
 
 //-Data
 import videos from '../src/assets/data/videos.json';
 import videoDetails from '../src/assets/data/video-details.json';
+
+//-Styles
+import './App.scss';
 
 
 class App extends Component {
@@ -50,7 +51,6 @@ class App extends Component {
     <div className="App">
       <Nav />
       <FeaturedVideo videoDetails={videoDetails[this.state.currentVideoIndex]}/>
-      {/* <VideoDisplay videoDetails={videoDetails} /> */}
       <div className="videoList__container">
         <h4 className="videoList__title">NEXT VIDEO</h4>
         <VideoList videos={videos} setCurrentVideo={this.setCurrentVideo} currentVideoId={this.state.currentVideoId}/>
