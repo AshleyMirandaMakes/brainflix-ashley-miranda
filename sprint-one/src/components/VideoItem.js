@@ -3,7 +3,7 @@ import './VideoItem.scss';
 function VideoItem(props) {
   // console.log(props)
   return (
-    <li className="videoItem" onClick={() =>{props.setCurrentVideo(1)}}>
+    <li className="videoItem" onClick={() =>{props.setCurrentVideo(props.id)}}>
       <img className="videoItem__image" src={props.image} alt={props.title} />
       <div className="videoItem__headings">
         <h3>{props.title}</h3> 
@@ -13,4 +13,4 @@ function VideoItem(props) {
   );
 }
 
-export default VideoItem;
+export default VideoItem; 

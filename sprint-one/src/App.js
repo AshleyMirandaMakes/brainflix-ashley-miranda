@@ -15,22 +15,40 @@ class App extends Component {
     videos : videos,
     videoDetails: videoDetails,
     currentVideoIndex : 0,
+    // currentVideoIndex
   };
 
+  setCurrentVideo = (id) => {
+    let newVideos = [...this.state.videos]
+    let videoIndex = newVideos.findIndex((video) => {
+      return id === video.id;
+    })
+
+    let clickedVideo = newVideos[videoIndex]
+
+    let updatedVideos = newVideos.filter(video => id !== video.id)
+
+    console.log(updatedVideos);
+    updatedVideos.unshift(clickedVideo);
+    console.log(updatedVideos);
   
+    this.setState({videos: updatedVideos, currentVideoIndex : videoIndex})
 
-
-
-  setCurrentVideo = (index) => {
-  console.log("this is the currentSetVideo index" ,index)
-  this.setState({currentVideoIndex : index})
+    // this.setState({videos : !videoIndex })
   }
 
 
 
 
-  render() {
+  // setCurrentVideo = (index) => {
+  // console.log("this is the currentSetVideo index" ,index)
+  // this.setState({currentVideoIndex : index})
+  // }
 
+
+
+
+  render() {
   return (
     <div className="App">
       <Nav />

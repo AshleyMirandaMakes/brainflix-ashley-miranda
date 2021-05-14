@@ -14,7 +14,7 @@ function VideoList(props) {
   return (
     <ul className="videoList">{
       props.videos
-        .filter((video) => video.id !== "1af0jruup5gu")
+      .slice(1)
         .map((video) => (
           <VideoItem 
             setCurrentVideo={props.setCurrentVideo}
