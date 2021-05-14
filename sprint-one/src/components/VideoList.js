@@ -1,20 +1,17 @@
 import VideoItem from './VideoItem';
 import './VideoList.scss';
-import React, { Component } from 'react';
 
-// class VideoList extends Component {
-  
-
-
-
-// }
+  {/* .slice(0) ---1  
+      //no video removed, first video removed, make this dynamic */}
+      // .slice(1)
+      // could I pass a dynamic value in here? how?
 
 function VideoList(props) {
 
   return (
     <ul className="videoList">{
       props.videos
-      .slice(1)
+      .filter((video) => video.id !== props.currentVideoId)
         .map((video) => (
           <VideoItem 
             setCurrentVideo={props.setCurrentVideo}

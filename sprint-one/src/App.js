@@ -12,9 +12,10 @@ import videoDetails from '../src/assets/data/video-details.json';
 
 class App extends Component {
   state = {
-    videos : videos,
-    videoDetails: videoDetails,
+    videos,
+    videoDetails,
     currentVideoIndex : 0,
+    currentVideoId : "1af0jruup5gu",
     // currentVideoIndex
   };
 
@@ -23,16 +24,37 @@ class App extends Component {
     let videoIndex = newVideos.findIndex((video) => {
       return id === video.id;
     })
+    console.log(videoIndex);
 
     let clickedVideo = newVideos[videoIndex]
 
-    let updatedVideos = newVideos.filter(video => id !== video.id)
+    // let updatedVideos = newVideos.filter(video => id !== video.id)
 
-    console.log(updatedVideos);
+
+    // let currentVideoIndex = newVideos.find((video) => video.id === id);
+    // console.log("current Video Index",currentVideoIndex );
+
+     let currentVideoIndex = newVideos.find((videoIndex) => id !== videoIndex);
+    console.log("current Video Index",currentVideoIndex );
+
+
+    let updatedVideos = newVideos.filter(currentVideoIndex => id !== videoIndex)
+    console.log(updatedVideos)
+
+    console.log(videoIndex);
+   
+    //shows all videos
+
     updatedVideos.unshift(clickedVideo);
-    console.log(updatedVideos);
+    // pushes the video clicked on top first index of the array
+    //but original of1 does not display on the page - could this be because of slice in the component?
+
+
+    //ideas - maybe .shift the top item in the array and return it to the index of the clicked video?
+
   
-    this.setState({videos: updatedVideos, currentVideoIndex : videoIndex})
+    this.setState({videos: updatedVideos, currentVideoIndex : videoIndex, currentVideoId: id,
+    })
 
     // this.setState({videos : !videoIndex })
   }
@@ -49,6 +71,8 @@ class App extends Component {
 
 
   render() {
+    console.log("render")
+
   return (
     <div className="App">
       <Nav />
@@ -56,7 +80,7 @@ class App extends Component {
       {/* <VideoDisplay videoDetails={videoDetails} /> */}
       <div className="videoList__container">
         <h4 className="videoList__title">NEXT VIDEO</h4>
-        <VideoList videos={videos} setCurrentVideo={this.setCurrentVideo}/>
+        <VideoList videos={videos} setCurrentVideo={this.setCurrentVideo} currentVideoId={this.state.currentVideoId}/>
       </div>
     </div>
   );
