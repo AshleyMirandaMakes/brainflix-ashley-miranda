@@ -1,6 +1,9 @@
 import PlayingVideo from '../PlayingVideo/PlayingVideo';
 import Comments from '../Comments/Comments';
 
+import './FeaturedVideo.scss';
+//might not need this
+
 function FeaturedVideo (props) {
     return (
       <div>

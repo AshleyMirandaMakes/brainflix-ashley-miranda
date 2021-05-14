@@ -1,0 +1,44 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.playingVideo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__image{
+    width: 100%;
+    max-height: 183px;
+  }
+  &__container{
+    width: 100%;
+    padding: 1rem;
+  }
+  &__title {
+    @include font-bold;
+  }
+  &__subheadings{
+    display: flex;
+    padding: 1rem 0;
+  }
+  &__timestamp{
+    @include font-regular;
+    color: $color-silver;
+    margin-left: .5rem;
+  }
+  &__views {
+    @include font-regular;
+    padding: 0 .5rem;
+  }
+  &__likes {
+    @include font-regular;
+    padding: 0 .5rem;
+  }
+  &__description {
+    padding-top: 1.5rem;
+    padding-bottom: .5rem;
+    border-top: 1px solid $color-mercury;
+    font-size: .725rem;
+  }
+}

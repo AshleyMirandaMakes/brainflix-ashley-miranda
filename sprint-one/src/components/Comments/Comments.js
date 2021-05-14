@@ -1,5 +1,7 @@
 import CommentForm from '../CommentForm/CommentForm';
 
+import './Comments.scss';
+
 function Comments (props) {
     return(
       <section className="comment">

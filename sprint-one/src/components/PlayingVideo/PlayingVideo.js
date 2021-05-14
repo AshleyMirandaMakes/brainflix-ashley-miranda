@@ -1,3 +1,5 @@
+import './PlayingVideo.scss';
+
 
 function PlayingVideo (props) {
     return (

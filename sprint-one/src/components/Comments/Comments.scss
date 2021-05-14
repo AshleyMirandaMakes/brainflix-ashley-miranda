@@ -1,0 +1,96 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.comment {
+  padding: 1rem;
+  &__title {
+    color: $color-black;
+    @include tablet {
+      padding-left: 2rem;
+      padding-top: 2rem;
+    }
+    @include desktop {
+      @include margin-auto;
+      max-width: 1080px;
+    }
+  }
+  &__container { 
+    @include margin-auto;
+    // padding: 1rem;
+    max-width: 500px;
+    @include tablet {
+      @include margin-auto;
+      max-width: 580px;
+   }
+   @include desktop {
+    @include margin-auto;
+    max-width: 520px;
+   }
+  }
+  &__card {
+    display: flex;
+    border-bottom: 1px solid $color-mercury;
+    width: 100%;
+    padding: 0rem;
+    @include tablet{
+      padding: 1.5rem 0rem;
+    }
+  }
+  &__image{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $color-mercury;
+    padding: 1rem;
+    @include tablet{
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &__content {
+    padding-left: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &--top {
+      display: flex;
+      flex-direction: row;
+      //justify-content: space-between;
+      justify-content: flex-start;
+      padding-bottom: .5rem;
+      width: 100%;
+    }
+    &--right {
+      display: flex;
+      flex-direction: row;
+      width: 60%;
+      justify-content: flex-end;
+    }
+  }
+  &__name {
+    @include font-demi;
+    @include flex-center;
+    color: $color-black;
+    display: flex;
+    justify-content: flex-start;
+    font-size: .8rem;
+    width: 40%;
+  }
+  &__timestamp {
+    @include flex-center;
+    align-self: flex-end;
+    color: $color-silver;
+  }
+  &__content--bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  &__comment {
+    font-size: .79rem;
+    @include tablet{
+     font-size: .875rem;
+    }
+  }
+}

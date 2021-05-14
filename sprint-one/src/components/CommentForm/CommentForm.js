@@ -1,3 +1,5 @@
+import './CommentForm.scss';
+
 function CommentForm () {
     return(
       <section className="form">
