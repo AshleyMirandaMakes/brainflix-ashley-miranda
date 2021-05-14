@@ -4,7 +4,7 @@ import './PlayingVideo.scss';
 function PlayingVideo (props) {
     return (
       <div className="playingVideo">
-        <img className="playingVideo__image" src={props.videoDetails.image} alt={props.videoDetails.title}/>
+        <video controls poster={props.videoDetails.image}></video>
           <section className="playingVideo__container">
           <h1 className="playingVideo__title">{props.videoDetails.title}</h1>
           <div className="playingVideo__subheadings">
