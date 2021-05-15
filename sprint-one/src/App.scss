@@ -3,15 +3,5 @@
 @use './partials/mixins.scss' as *;
 @use './partials/resets.scss' as *;
 
-//does not belong here permanently
-.videoList {
-  &__container {
-    padding: .75rem 1rem;
-  }
-  &__title{
-    @include font-demi;
-    color: $color-silver;
-    padding: 2rem 0;
-  }
-}
+
 

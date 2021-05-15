@@ -7,22 +7,23 @@
 .nav {
   width: 100%;
   display: flex;
+  padding: 1rem;
   flex-direction: column;
+  height: 169px;
   &__logo {
-    @include flex-center;
-    padding: 1rem 6.5rem;
+    width: 45%;
+    margin: 0 auto;
   }
   &__searchbar{
     @include flex-center;
-    padding: .75rem;
-    margin: 0 1rem;
-    border: 1px solid $color-mercury;
+    padding: 1rem;
+    margin: .5rem 0;
+    border: 1.5px solid $color-mercury;
     background-color: $color-alabaster;
     border-radius: 5px;
   }
   &__bottom {
     display: flex;
-    padding: .5rem 1rem;
   }
   &__button {
     @include font-demi;
