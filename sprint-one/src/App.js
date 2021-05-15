@@ -1,7 +1,6 @@
-import Nav from './components/Nav/Nav';
-import '../src/partials/_resets.scss';
-import VideoList from './components/VideoList';
 import React, { Component } from 'react';
+import Nav from './components/Nav/Nav';
+import VideoList from './components/VideoList/VideoList';
 import FeaturedVideo from './components/FeaturedVideo/FeaturedVideo';
 
 //-Data
@@ -50,17 +49,15 @@ class App extends Component {
   return (
     <div className="App">
       <Nav />
-      <FeaturedVideo videoDetails={videoDetails[this.state.currentVideoIndex]}/>
-      <div className="videoList__container">
-        <h4 className="videoList__title">NEXT VIDEO</h4>
-        <VideoList videos={videos} setCurrentVideo={this.setCurrentVideo} currentVideoId={this.state.currentVideoId}/>
-      </div>
+      <FeaturedVideo 
+        videoDetails={videoDetails[this.state.currentVideoIndex]}/> 
+      <VideoList 
+        videos={videos} 
+        setCurrentVideo={this.setCurrentVideo} 
+        currentVideoId={this.state.currentVideoId}/>
     </div>
   );
   }
 }
-
-
-
 
 export default App;

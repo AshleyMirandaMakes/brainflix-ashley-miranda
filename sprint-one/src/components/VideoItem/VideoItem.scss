@@ -1,7 +1,7 @@
-@use '../partials/mixins' as *;
-@use '../partials/fonts' as *;
-@use '../partials/resets' as *;
-@use '../partials/variables' as *;
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
 
 .videoItem{
   width: 100%;
