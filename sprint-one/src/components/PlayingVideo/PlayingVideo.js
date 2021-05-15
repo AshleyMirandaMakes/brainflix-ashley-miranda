@@ -1,19 +1,14 @@
-import './PlayingVideo.scss';
 import ViewsIcon from '../../assets/icons/Icon-views.svg';
 import LikesIcon from '../../assets/icons/Icon-likes.svg';
 import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
 
+import './PlayingVideo.scss';
+
 
 function PlayingVideo (props) {
+
   let timestamp = props.videoDetails.timestamp;
-  console.log(timestamp);
-
-  //let timestamp = {props.videoDetails.timestamp
-  console.log(NumericMonthDayYearConverter);
-
   timestamp = NumericMonthDayYearConverter(timestamp);
-
-  console.log(timestamp);
 
     return (
       <div className="playingVideo">

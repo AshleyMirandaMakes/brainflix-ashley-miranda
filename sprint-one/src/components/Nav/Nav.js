@@ -7,7 +7,7 @@ import UploadIcon from '../../assets/icons/Icon-upload.svg';
 import './Nav.scss';
 
 function Nav() {
-  console.log(Logo)
+  //console.log(Logo)
   return (
     <nav className="nav">
       <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
@@ -20,35 +20,36 @@ function Nav() {
   );
 }
 
-console.log({SearchIcon})
+//console.log({SearchIcon})
 
 const SearchBar = (props) => {
-  console.log(props.SearchIcon)
+  //console.log(props.SearchIcon)
   return (
     <input 
     className="nav__searchbar"
     type="text" 
     src={props.SearchIcon}
-    onChange="defaultValue"
-    value={props.value}>
-      {/* <img className="nav__searchbar--icon" src={props.SearchIcon}/> */}
+    alt="search icon">
     </input>
   );
 }
+//add these back in if it becomes a search field, for now they cause warnings. 
+   // value={props.value}>
 //hmmm no icon
+ // onChange="defaultValue"
 
 
-console.log({UploadIcon})
+//console.log({UploadIcon})
 const Button = (props) => {
   return (
-    <button className="nav__button"><img src={props.UploadIcon}/>{props.name}</button>
+    <button className="nav__button"><img src={props.UploadIcon} alt={props.name}/>{props.name}</button>
   );
 }
 
 const UserImage = (props) => {
   return (
     <div className="nav__image">
-      <img className="nav__image" src={props.image} alt="user's image"></img>
+      <img className="nav__image" src={props.image} alt="user's face"></img>
     </div>
   );
 }

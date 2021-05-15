@@ -33,7 +33,7 @@
     display: flex;
     border-bottom: 1px solid $color-mercury;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     @include tablet{
       padding: 1.5rem 0rem;
     }
@@ -50,7 +50,7 @@
     }
   }
   &__content {
-    padding-left: .75rem;
+    padding-left: .85rem;
     width: 100%;
     &--top {
       display: flex;
@@ -59,12 +59,6 @@
       padding-bottom: .5rem;
       width: 100%;
     }
-    &--right {
-      display: flex;
-      flex-direction: row;
-      width: 60%;
-      justify-content: flex-end;
-    }
   }
   &__name {
     @include font-demi;
@@ -72,16 +66,17 @@
     color: $color-black;
     display: flex;
     justify-content: flex-start;
-    font-size: .8rem;
-    width: 40%;
+    font-size: .85rem;
+    width: 60%;
   }
   &__timestamp {
     @include flex-center;
     align-self: flex-end;
     color: $color-silver;
+    font-size: .85rem;
   }
   &__comment {
-    font-size: .79rem;
+    font-size: .875rem;
     @include tablet{
      font-size: .875rem;
     }
