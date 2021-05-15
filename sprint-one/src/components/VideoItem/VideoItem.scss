@@ -16,7 +16,14 @@
   &__headings {
     padding: 0rem 1rem;
   }
+  &__title {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   &__channel {
     margin-top: .5rem;
+    font-size: .825rem;
   }
 }

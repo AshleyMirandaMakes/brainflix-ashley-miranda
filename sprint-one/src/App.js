@@ -24,7 +24,7 @@ class App extends Component {
     let videoIndex = newVideos.findIndex((video) => {
       return id === video.id;
     })
-    console.log(videoIndex);
+    //console.log(videoIndex);
 
     let clickedVideo = newVideos[videoIndex]
 

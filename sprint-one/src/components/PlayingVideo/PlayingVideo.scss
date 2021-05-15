@@ -31,6 +31,10 @@
     color: $color-silver;
     margin-left: .5rem;
   }
+  &__details {
+    display: flex;
+    margin-right: 1rem;
+  }
   &__views {
     @include font-regular;
     padding: 0 .5rem;

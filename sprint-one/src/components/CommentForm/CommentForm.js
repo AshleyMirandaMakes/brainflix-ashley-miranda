@@ -7,7 +7,7 @@ function CommentForm () {
           <div className="form__image"></div>
           <form className="form__content">
             <label className="form__title">JOIN THE CONVERSATION</label>
-            <input className="form__input" type="text" name="message" placeholder="That was easily the most spectacular BMX moment ever."></input>
+            <textarea className="form__textarea" type="text" name="message" placeholder="That was easily the most spectacular BMX moment ever."></textarea>
             <button className="form__button">COMMENT</button>
           </form>
         </div>

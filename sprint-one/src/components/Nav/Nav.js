@@ -1,39 +1,47 @@
 import './Nav.scss';
-import Logo from '../../assets/logos/Logo-brainflix.svg'
-import UserIcon from '../../assets/images/Mohan-muruge.jpg'
+import Logo from '../../assets/logos/Logo-brainflix.svg';
+import UserIcon from '../../assets/images/Mohan-muruge.jpg';
+import SearchIcon from '../../assets/icons/Icon-search.svg';
+import UploadIcon from '../../assets/icons/Icon-upload.svg';
 
 import './Nav.scss';
 
 function Nav() {
+  console.log(Logo)
   return (
     <nav className="nav">
       <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
-      <SearchBar value="Search"/>
+      <SearchBar src={SearchIcon} img={SearchIcon} value="Search"/>
       <div className="nav__bottom">
-        <Button name="UPLOAD"/>
+        <Button name="UPLOAD" src={UploadIcon} img={UploadIcon}/>
         <UserImage src={UserIcon} image={UserIcon} />
       </div>
     </nav>
   );
 }
 
-
-const Button = (props) => {
-  // console.log(props.icon);
-    return (
-      <button className="nav__button">{props.icon}{props.name}</button>
-    );
-}
+console.log({SearchIcon})
 
 const SearchBar = (props) => {
+  console.log(props.SearchIcon)
   return (
     <input 
     className="nav__searchbar"
     type="text" 
-    src={props.i}
-    value={props.value}
+    src={props.SearchIcon}
     onChange="defaultValue"
-    />
+    value={props.value}>
+      {/* <img className="nav__searchbar--icon" src={props.SearchIcon}/> */}
+    </input>
+  );
+}
+//hmmm no icon
+
+
+console.log({UploadIcon})
+const Button = (props) => {
+  return (
+    <button className="nav__button"><img src={props.UploadIcon}/>{props.name}</button>
   );
 }
 
