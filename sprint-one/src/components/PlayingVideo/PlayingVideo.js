@@ -1,3 +1,4 @@
+import Video from '../Video/Video'
 import ViewsIcon from '../../assets/icons/Icon-views.svg';
 import LikesIcon from '../../assets/icons/Icon-likes.svg';
 import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
@@ -12,7 +13,8 @@ function PlayingVideo (props) {
 
     return (
       <div className="playingVideo">
-        <video controls poster={props.videoDetails.image}></video>
+        {/* <video controls poster={props.videoDetails.image}></video> */}
+        <Video videoDetails={props.videoDetails.image} />
           <section className="playingVideo__container">
           <h1 className="playingVideo__title">{props.videoDetails.title}</h1>
           <div className="playingVideo__subheadings">

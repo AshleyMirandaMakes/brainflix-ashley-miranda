@@ -10,12 +10,14 @@ function Nav() {
   //console.log(Logo)
   return (
     <nav className="nav">
-      <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
-      <SearchBar src={SearchIcon} img={SearchIcon} value="Search"/>
-      <div className="nav__bottom">
-        <Button name="UPLOAD" src={UploadIcon} img={UploadIcon}/>
-        <UserImage src={UserIcon} image={UserIcon} />
-      </div>
+      <div className="nav__container">
+        <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
+          <SearchBar src={SearchIcon} img={SearchIcon} value="Search"/>
+          <div className="nav__bottom">
+            <Button name="UPLOAD" src={UploadIcon} img={UploadIcon}/>
+            <UserImage src={UserIcon} image={UserIcon} />
+          </div>
+        </div>
     </nav>
   );
 }

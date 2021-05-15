@@ -1,0 +1,24 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+
+.video {
+  &__container{
+    width: 100%;
+    @include tablet {
+      background-color: $color-black;
+    }
+  }
+  &__image{
+    width: 100%;
+    max-height: 183px;
+    //max-height: 183px?
+    @include tablet {
+      width: 700px;
+      height: 400px;
+      background-color: $color-black;
+    }
+  }
+}
