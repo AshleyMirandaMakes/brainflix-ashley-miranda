@@ -21,25 +21,20 @@ class App extends Component {
   };
 
   setCurrentVideo = (id) => {
+    //spread to not mutate 
     let newVideos = [...this.state.videos]
+    //find the index that matches the id returned by our click handler
     let videoIndex = newVideos.findIndex((video) => {
       return id === video.id;
     })
-    //console.log(videoIndex);
-
+    
+    //let the clicked video be the return of all the object data, not just the id
     let clickedVideo = newVideos[videoIndex]
-
-
-     let currentVideoIndex = newVideos.find((videoIndex) => id !== videoIndex);
-    console.log("current Video Index",currentVideoIndex );
   
+    //let our updated video list not include the object clicked
+    let updatedVideos = newVideos.filter(video => video.id !== clickedVideo);
 
-    //frankly I'm not sure what tis is doing anymore but it throws a fir id I delete anything
-    let updatedVideos = newVideos.filter(currentVideoIndex => id !== videoIndex)
-    console.log(updatedVideos)
-
-    updatedVideos.unshift(clickedVideo);
-  
+    //set the new states
     this.setState({videos: updatedVideos, currentVideoIndex : videoIndex, currentVideoId: id,
     })
   }

@@ -30,7 +30,6 @@
     @include tablet {
       @include margin-auto;
       max-width: 730px;
-      padding-left: 1rem;
    }
     @include desktop {
       margin-left: 5.5rem;

@@ -21,11 +21,11 @@ function PlayingVideo (props) {
             </div>
             <div className="playingVideo__subheadings">
               <div className="playingVideo__details">
-                <img src={ViewsIcon}/>
+                <img src={ViewsIcon} alt="views icon"/>
                 <h3 className="playingVideo__views">{props.videoDetails.views}</h3>
               </div>
               <div className="playingVideo__details">
-                <img src={LikesIcon}/>
+                <img src={LikesIcon} alt="likes icon"/>
                 <h3 className="playingVideo__likes">{props.videoDetails.likes}</h3>
               </div>
             </div>

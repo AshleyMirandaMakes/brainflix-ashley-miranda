@@ -3,7 +3,6 @@ import SearchIcon from '../../assets/icons/Icon-search.svg';
 import './SearchBar.scss';
 
 const SearchBar = () => {
-  console.log(SearchIcon)
   return (
       <input 
       className="searchbar"

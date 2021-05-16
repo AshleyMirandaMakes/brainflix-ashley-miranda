@@ -10,9 +10,16 @@
   color: $color-white;
   width: 75%;
   border-radius: 5px;
+  :hover {
+    background-color: $color-darkblue-brainflix;
+    border: $color-darkblue-brainflix;
+  }
   &__icon {
     padding-right: .5rem;
     border: $color-lightblue-brainflix;
+  }
+  :hover {
+    background-color: $color-darkblue-brainflix;
   }
   @include large-phone {
     width: 100px; 
