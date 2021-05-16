@@ -13,8 +13,6 @@ function PlayingVideo (props) {
 
     return (
       <div className="playingVideo">
-        <Video 
-        videoDetails={props.videoDetails.image}/>
           <section className="playingVideo__container">
           <h1 className="playingVideo__title">{props.videoDetails.title}</h1>
           <div className="playingVideo__sub-container">

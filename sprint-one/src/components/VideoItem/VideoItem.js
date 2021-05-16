@@ -1,7 +1,7 @@
 import './VideoItem.scss';
 
 function VideoItem(props) {
-  // console.log(props)
+  //console.log(props)
   return (
     <li className="videoItem" onClick={() =>{props.setCurrentVideo(props.id)}}>
       <img className="videoItem__image" src={props.image} alt={props.title} />

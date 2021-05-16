@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from './components/Nav/Nav';
 import VideoList from './components/VideoList/VideoList';
 import FeaturedVideo from './components/FeaturedVideo/FeaturedVideo';
+import Video from './components/Video/Video';
 
 //-Data
 import videos from '../src/assets/data/videos.json';
@@ -49,12 +50,16 @@ class App extends Component {
   return (
     <div className="App">
       <Nav />
-      <FeaturedVideo 
-        videoDetails={videoDetails[this.state.currentVideoIndex]}/> 
-      <VideoList 
-        videos={videos} 
-        setCurrentVideo={this.setCurrentVideo} 
-        currentVideoId={this.state.currentVideoId}/>
+      <Video 
+        videoDetails={videoDetails[this.state.currentVideoIndex]}/>
+        <div className="app__container">
+          <FeaturedVideo 
+            videoDetails={videoDetails[this.state.currentVideoIndex]}/> 
+          <VideoList 
+            videos={videos} 
+            setCurrentVideo={this.setCurrentVideo} 
+            currentVideoId={this.state.currentVideoId}/>
+        </div>
     </div>
   );
   }
