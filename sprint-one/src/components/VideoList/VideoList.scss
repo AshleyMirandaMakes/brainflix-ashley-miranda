@@ -13,11 +13,20 @@
   }
   &__container {
     padding: .5rem 1rem;
+    @include desktop {
+      //ok for real, I know this is hacky. I need help figuring out how to put all this stuff in the same div in the js. 
+      width: 25%;
+      margin-left: 60rem;
+      margin-top: -55.5rem;
+    }
   }
   &__title{
     @include font-demi;
     color: $color-silver;
     padding-bottom: 1rem;
     padding-top: .75rem;
+    @include desktop {
+      padding: 1.75rem 0;
+    }
   }
 }

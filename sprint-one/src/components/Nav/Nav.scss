@@ -13,19 +13,27 @@
     flex-direction: column;
     height: 169px;
     @include tablet {
+      @include margin-auto;
       display: flex;
       flex-direction: row;
       height: 80px;
       max-width: 730px;
-      margin: 0 auto;
+    }
+    @include desktop {
+      @include margin-auto;
+      max-width: 1200px;
     }
   }
   &__logo {
+    @include margin-auto;
     @include flex-center;
     width: 45%;
-    margin: 0 auto;
     @include tablet {
       width: 17%;
+    }
+    @include desktop {
+      width: 13%;
+      margin-left: 0;
     }
   }
   &__searchbar{

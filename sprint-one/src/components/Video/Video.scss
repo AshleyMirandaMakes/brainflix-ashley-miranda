@@ -9,8 +9,11 @@
     width: 100%;
     @include tablet {
       display: flex;
-      background-color: $color-black;
+      background-color: $color-dark-black;
       height: 400px;
+    }
+    @include desktop {
+      height: 540px;
     }
   }
   &__image{
@@ -18,10 +21,14 @@
     max-height: 183px;
     //max-height: 183px?
     @include tablet {
-      margin: 0 auto;
+      @include margin-auto;
       width: 700px;
       max-height: 400px;
       background-color: $color-black;
+    }
+    @include desktop {
+      width: 944px;
+      min-height: 540px;
     }
   }
 }
