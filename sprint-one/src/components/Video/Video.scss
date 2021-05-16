@@ -8,7 +8,9 @@
   &__container{
     width: 100%;
     @include tablet {
+      display: flex;
       background-color: $color-black;
+      height: 400px;
     }
   }
   &__image{
@@ -16,8 +18,9 @@
     max-height: 183px;
     //max-height: 183px?
     @include tablet {
+      margin: 0 auto;
       width: 700px;
-      height: 400px;
+      max-height: 400px;
       background-color: $color-black;
     }
   }

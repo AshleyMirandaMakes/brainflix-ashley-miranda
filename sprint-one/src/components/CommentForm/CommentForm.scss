@@ -13,12 +13,14 @@
     border-bottom: 1px solid $color-mercury;
     max-width: 500px;
     @include tablet {
-      @include margin-auto;
-      max-width: 580px;
+    width: 100%;
+    max-width: 730px;
+    padding-bottom: 0;
    }
    @include desktop {
     @include margin-auto;
     max-width: 520px;
+    padding: 1rem 0;
    }
   }
   &__image{
@@ -53,9 +55,16 @@
       font-size: .72rem;
     }
   }
+  &__flex-container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
   &__textarea{
     display: block;
-    min-height: 80px;
+    height: 80px; //check this
     color: $color-black;
     resize: none;
     width: 100%;
@@ -72,8 +81,10 @@
       border: 1px solid $color-black;
     }
     @include tablet {
-      min-height: 48px;
-      padding: 1rem;
+      //padding: 1rem;
+      height: 45px;
+      margin-right: 1rem;
+      width: 440px;
     }
   }
   &__button{
@@ -89,12 +100,10 @@
       border-color: $color-lightblue-brainflix;
     }
     @include tablet {
-      min-width: 150px;
-      max-width: 200px;
-      align-self:f lex-end;
+      width: 160px;
       padding: .5rem;
-      margin: .45rem 0;
-      border-radius: 6px;
+      margin: 0;
+      border-radius: 4px;
     }
   }
 }
