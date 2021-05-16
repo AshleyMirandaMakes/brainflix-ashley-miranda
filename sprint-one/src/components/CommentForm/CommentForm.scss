@@ -18,9 +18,11 @@
     padding-bottom: 0;
    }
    @include desktop {
-    margin-left: 8rem;
-    max-width: 800px;
+   // margin-left: 8rem;
+    margin-left: 4.5rem;
+    max-width: 712px;
     padding: 1rem;
+    border-bottom: none;
    }
   }
   &__image{
@@ -35,6 +37,9 @@
       margin-right: .5rem;
       width: 48px;
       height: 48px;
+    }
+    @include desktop {
+      margin-left: 0;
     }
   }
   &__content {
@@ -101,6 +106,9 @@
     border-radius: 4px;
     width: 205px;
     height: 45px;
+    @include desktop {
+      border-color: $color-mercury; //?
+    }
     &:hover {
       background-color: $color-lightblue-brainflix;
       border-color: $color-lightblue-brainflix;
@@ -111,5 +119,6 @@
       margin: 0;
       border-radius: 6px;
     }
+  
   }
 }

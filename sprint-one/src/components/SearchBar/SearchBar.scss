@@ -11,11 +11,18 @@
   border: 1.5px solid $color-mercury;
   background-color: $color-alabaster;
   border-radius: 5px;
+  @include large-phone {
+    margin-left: 1rem;
+  }
   @include tablet {
     width: 35%;
-    margin-left: 9rem;
-    margin-right: 1.5rem;
-    padding: 1.35rem;
+    height: 44px;
+    margin-left: 11rem;
+    margin-right: 1rem;
+    padding: 1.25rem;
     margin-top: .1rem;
+  }
+  @include desktop {
+    //margin-left: 20rem;
   }
 }

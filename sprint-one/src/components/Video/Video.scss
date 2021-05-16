@@ -7,19 +7,24 @@
 .video {
   &__container{
     width: 100%;
+    background-color: $color-dark-black;
+    @include large-phone {
+      max-height: 300px;
+    }
     @include tablet {
       display: flex;
-      background-color: $color-dark-black;
-      height: 400px;
+      max-height: 400px;
     }
     @include desktop {
-      height: 540px;
+      max-height: 540px;
     }
   }
   &__image{
     width: 100%;
     max-height: 183px;
-    //max-height: 183px?
+    @include large-phone{
+      max-height: 300px;
+    }
     @include tablet {
       @include margin-auto;
       width: 700px;

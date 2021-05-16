@@ -8,26 +8,39 @@
   width: 100%;
   display: flex;
   &__container {
+    @include margin-auto;
     width: 100%;
+    max-width: 430px;
     padding: 1rem;
     flex-direction: column;
     height: 169px;
+    max-height: 169px;
+    @include large-phone {
+      @include margin-auto;
+      display: flex;
+      flex-direction: row;
+      max-height: 80px;
+      max-width: 676px;
+    }
     @include tablet {
       @include margin-auto;
       display: flex;
       flex-direction: row;
-      height: 80px;
+      max-height: 80px;
       max-width: 730px;
     }
     @include desktop {
-      @include margin-auto;
       max-width: 1200px;
+      margin-right: 3rem;;
     }
   }
   &__logo {
     @include margin-auto;
     @include flex-center;
     width: 45%;
+    @include large-phone {
+     width: 25%;
+    }
     @include tablet {
       width: 17%;
     }

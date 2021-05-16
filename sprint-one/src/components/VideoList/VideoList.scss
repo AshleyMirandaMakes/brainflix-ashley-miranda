@@ -13,11 +13,14 @@
   }
   &__container {
     padding: .5rem 1rem;
+    @include tablet {
+      @include margin-auto;
+      max-width: 767px;
+    }
     @include desktop {
-      //ok for real, I know this is hacky. I need help figuring out how to put all this stuff in the same div in the js. 
-      width: 25%;
-      margin-left: 60rem;
-      margin-top: -55.5rem;
+      max-width: 538px;
+      border-left: 1px solid $color-mercury;
+      margin-left: 0;
     }
   }
   &__title{

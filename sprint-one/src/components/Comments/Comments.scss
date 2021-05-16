@@ -5,17 +5,23 @@
 
 .comment {
   padding: 1rem;
+  @include desktop {
+    padding-right: 0;
+  }
   &__title {
     color: $color-black;
     font-size: 1rem;
     @include tablet {
-      padding-left: 0rem;
+      padding-left: .5rem;
       padding-top: 1.5rem;
       font-size: 1.12rem;
+      @include margin-auto;
+      max-width: 730px;
     }
     @include desktop {
-      margin-left: 9rem;
-      max-width: 800px;
+      margin-left: 5.5rem;
+      width: 835px;
+      margin-right: 0
     }
   }
   &__container { 
@@ -24,10 +30,12 @@
     @include tablet {
       @include margin-auto;
       max-width: 730px;
+      padding-left: 1rem;
    }
     @include desktop {
-      margin-left: 9rem;
-      max-width: 800px;
+      margin-left: 5.5rem;
+      max-width: 855px;
+      padding-left: 0;
     }
   }
   &__card {
@@ -39,7 +47,9 @@
       padding: 1rem 0rem;
     }
     @include desktop {
-      max-width: 713px;
+      max-width: 865px;
+      padding-right: 0;
+      margin-right: 0;
     }
   }
   &__image{

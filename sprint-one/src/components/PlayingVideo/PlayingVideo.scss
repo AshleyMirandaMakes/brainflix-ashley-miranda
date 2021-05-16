@@ -15,8 +15,10 @@
       max-width: 745px;
     }
     @include desktop {
-      margin-left: 9rem;
-      max-width: 800px;
+      max-width: 712px;
+      margin-left: 6rem;
+      padding-right: 4rem;
+      margin-right: 0;
     }
   }
   &__title {
@@ -26,18 +28,29 @@
       margin-top: .75rem;
     }
     @include desktop {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      margin-top: 0;
     }
   }
   &__sub-container {
     @include tablet {
       display: flex;
       justify-content: space-between;
+      border-bottom: 1px solid $color-mercury;
+    }
+    @include desktop {
+      padding-top: 0;
+      width: 722px;
+      margin-right: 0;
     }
   }
   &__subheadings{
     display: flex;
     padding: .85rem 0;
+    @include desktop {
+      padding-top: 0;
+      margin-right: 3rem;
+    }
   }
   &__channel {
     font-size: 1rem;
@@ -63,6 +76,9 @@
       font-size: .8rem;
       margin-right: 1.25rem;
     }
+    @include desktop {
+      margin-right: 1.25rem;
+    }
   }
   &__likes {
     @include font-regular;
@@ -80,11 +96,15 @@
     font-size: .74rem;
     width: 98.2%;
     @include tablet {
-      width: 78%;
-      font-size: .92rem;
+      width: 75%;
+      font-size: .89rem;
     }
     @include desktop {
-      font-size: 1rem;
+      margin-top: 1rem;
+      border-top: none;
+      width: 80%;
+      line-height: 1.25rem;
+      font-size: .835rem;
     }
   }
 }

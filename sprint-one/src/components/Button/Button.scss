@@ -14,4 +14,19 @@
     padding-right: .5rem;
     border: $color-lightblue-brainflix;
   }
+  @include large-phone {
+    width: 100px; 
+    height: 35px;
+    margin-top: .5rem;
+    margin-left: 1rem;
+   }
+  @include tablet {
+    width: 100px; 
+    height: 44px;
+    margin-top: 0.1rem;
+    margin-left: 0;
+  }
+  @include desktop {
+    margin-right: 0;
+  }
 }

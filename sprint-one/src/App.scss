@@ -8,6 +8,8 @@
   &__container {
     @include desktop {
       display: flex;
+      max-width: 1250px;
+      margin: 0 auto;
     }
   }
 }
