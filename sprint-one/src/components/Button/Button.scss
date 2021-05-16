@@ -1,0 +1,17 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.button {
+  @include font-demi;
+  background-color: $color-lightblue-brainflix;
+  border: none;
+  color: $color-white;
+  width: 75%;
+  border-radius: 5px;
+  &__icon {
+    padding-right: .5rem;
+    border: $color-lightblue-brainflix;
+  }
+}

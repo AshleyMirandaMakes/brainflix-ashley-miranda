@@ -1,0 +1,21 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.searchbar{
+  @include flex-center;
+  width: 100%;
+  padding: 1rem;
+  margin: .5rem 0;
+  border: 1.5px solid $color-mercury;
+  background-color: $color-alabaster;
+  border-radius: 5px;
+  @include tablet {
+    width: 35%;
+    margin-left: 9rem;
+    margin-right: 1.5rem;
+    padding: 1.35rem;
+    margin-top: .1rem;
+  }
+}

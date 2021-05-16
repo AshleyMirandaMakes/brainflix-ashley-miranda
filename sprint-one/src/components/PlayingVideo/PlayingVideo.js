@@ -1,4 +1,3 @@
-import Video from '../Video/Video'
 import ViewsIcon from '../../assets/icons/Icon-views.svg';
 import LikesIcon from '../../assets/icons/Icon-likes.svg';
 import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
