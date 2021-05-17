@@ -1,0 +1,108 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.comment {
+  padding: 1rem;
+  @include desktop {
+    padding-right: 0;
+  }
+  &__title {
+    color: $color-black;
+    font-size: 1rem;
+    @include tablet {
+      padding-left: .5rem;
+      padding-top: 1.5rem;
+      font-size: 1.12rem;
+      @include margin-auto;
+      max-width: 730px;
+    }
+    @include desktop {
+      margin-left: 5.5rem;
+      width: 835px;
+      margin-right: 0
+    }
+  }
+  &__container { 
+    @include margin-auto;
+    max-width: 500px;
+    @include tablet {
+      @include margin-auto;
+      max-width: 730px;
+   }
+    @include desktop {
+      margin-left: 5.5rem;
+      max-width: 855px;
+      padding-left: 0;
+    }
+  }
+  &__card {
+    display: flex;
+    border-bottom: 1px solid $color-mercury;
+    width: 100%;
+    padding: 1.25rem 0;
+    @include tablet{
+      padding: 1rem 0rem;
+    }
+    @include desktop {
+      max-width: 865px;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+  &__image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-mercury;
+    padding: 1rem;
+    @include tablet{
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &__content {
+    padding-left: .85rem;
+    width: 100%;
+    &--top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: .5rem;
+      width: 100%;
+      @include tablet {
+        justify-content: flex-start;
+      }
+    }
+  }
+  &__name {
+    @include font-demi;
+    @include flex-center;
+    color: $color-black;
+    display: flex;
+    justify-content: flex-start;
+    font-size: .85rem;
+    width: 60%;
+    @include tablet {
+      font-size: 1rem;
+      width: auto;
+    }
+  }
+  &__timestamp {
+    @include flex-center;
+    align-self: flex-end;
+    color: $color-silver;
+    font-size: .85rem;
+    @include tablet {
+      margin-left: 1rem;
+    }
+  }
+  &__comment {
+    font-size: .875rem;
+    @include tablet{
+     font-size: .875rem;
+     width: 624px;
+    }
+  }
+}
