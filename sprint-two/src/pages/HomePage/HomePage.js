@@ -8,7 +8,7 @@ import VideoList from '../../components/VideoList';
 import videos from '../../../src/assets/data/videos.json';
 import videoDetails from '../../../src/assets/data/video-details.json';
 
-class HomePage extends Component () {
+class HomePage extends Component {
   state = {
     videos,
     videoDetails,

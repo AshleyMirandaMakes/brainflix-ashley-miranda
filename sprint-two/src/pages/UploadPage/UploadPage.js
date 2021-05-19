@@ -1,4 +1,5 @@
-//import image
+import Thumbnail from '../../assets/images/Upload-video-preview.jpg'
+import './UploadPage.scss'
 
 function UploadPage () {
   return (
@@ -6,8 +7,8 @@ function UploadPage () {
       <section className="upload">
       <h2 className="upload__heading">Upload Video</h2>
       <div className="upload__image-container">
-      <h4 className="upload__title"></h4>
-      <img className="upload__image "src="" alt=""/>
+      <h4 className="upload__title">VIDEO THUMBNAIL</h4>
+      <img className="upload__image "src={Thumbnail} alt="upload-image"/>
       </div>
       <form className="upload__content">
         <div className="upload__form-container">
