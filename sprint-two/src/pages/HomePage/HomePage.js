@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
-import Video from '../../components/Video/Video';
-import FeaturedVideo from '../../components/FeaturedVideo/FeaturedVideo';
-import VideoList from '../../components/VideoList/VideoList';
+import Video from '../../components/Video';
+import FeaturedVideo from '../../components/FeaturedVideo';
+import VideoList from '../../components/VideoList';
 
 //-Data
 import videos from '../../../src/assets/data/videos.json';

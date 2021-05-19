@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 //-Components
-import Header from './components/Header/Header';
+import Header from './components/Header';
 
 //-Pages
 import HomePage from './pages/HomePage/HomePage';

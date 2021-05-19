@@ -1,5 +1,5 @@
-import PlayingVideo from '../PlayingVideo/PlayingVideo';
-import Comments from '../Comments/Comments';
+import PlayingVideo from '../PlayingVideo';
+import Comments from '../Comments';
 
 import './FeaturedVideo.scss';
 //might not need this

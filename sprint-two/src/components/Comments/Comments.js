@@ -1,4 +1,4 @@
-import CommentForm from '../CommentForm/CommentForm';
+import CommentForm from '../CommentForm';
 import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
 
 import './Comments.scss';

@@ -1,7 +1,7 @@
 import Logo from '../../assets/logos/Logo-brainflix.svg';
 import UserIcon from '../../assets/images/Mohan-muruge.jpg';
-import Button from '../../components/Button/Button';
-import SearchBar from '../SearchBar/SearchBar';
+import Button from '../../components/Button';
+import SearchBar from '../../components/SearchBar';
 
 
 import './Nav.scss';

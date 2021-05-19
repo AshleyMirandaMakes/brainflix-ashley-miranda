@@ -1,4 +1,4 @@
-import VideoItem from '../VideoItem/VideoItem';
+import VideoItem from '../VideoItem';
 import './VideoList.scss';
 
 function VideoList(props) {
