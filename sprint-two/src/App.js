@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 //-Components
 import Header from './components/Header';
-import Video from './components/Video';
 
 //-Pages
 import HomePage from './pages/HomePage/HomePage';

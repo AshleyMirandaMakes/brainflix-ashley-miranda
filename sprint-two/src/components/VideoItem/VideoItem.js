@@ -1,12 +1,11 @@
 import { Component } from "react";
-import { API_URL, API_KEY } from "../../util";
 
 import './VideoItem.scss';
 
 class VideoItem extends Component {
   render () {
     
-    const { id, image, title, channel } = this.props
+    const { image, title, channel } = this.props
 
     return (
       // <li className="videoItem" onClick={() =>{this.props.setCurrentVideo(id)}}>
