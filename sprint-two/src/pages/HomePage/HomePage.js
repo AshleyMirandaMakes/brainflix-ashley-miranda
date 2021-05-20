@@ -22,7 +22,7 @@ class HomePage extends Component {
 
    componentDidMount() {
        const {videoId} = this.props.match.params;
-       console.log({videoId});
+       //console.log({videoId});
 
      axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
       .then(
@@ -44,16 +44,15 @@ class HomePage extends Component {
  
 
   render () {
-    console.log(this.state.VideoData)
-    // const { title } = this.state.videoData;
-    // console.log(title)
+    // const { id, title, channel, description, comments ,image, video} = this.state.videoData;
+    //console.log(this.state.videoData.video)
+    //console.log(this.state.videoData.comments)
+    //this works
     return (
       <main>
-        {/* <Video />  */}
-         {/* <Video 
-            videoDetails={videoDetails[this.state.currentVideoIndex]}/> */}
-          <div className="app__container">
-          {/* <FeaturedVideo/> */}
+      <Video video={this.state.videoData.video} image={this.state.videoData.image}/>
+           <div className="app__container"> 
+          <FeaturedVideo videoDetails={this.state.videoData} videoComments={this.state.videoData.comments}/> 
             {/* <FeaturedVideo 
               videoDetails={videoDetails[this.state.currentVideoIndex]}/>   */}
               <VideoList/>
@@ -61,7 +60,7 @@ class HomePage extends Component {
               videos={videos} 
               setCurrentVideo={this.setCurrentVideo}  
               currentVideoId={this.state.currentVideoId}/> */}
-          </div>
+           </div>
       </main>
     )
   }

@@ -4,11 +4,11 @@ import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
 import './Comments.scss';
 
 function Comments (props) {
-
+console.log(props)
     return(
       <section className="comment">
-          <h3 className="comment__title">3 Comments</h3>
-          <CommentForm videoDetails={props.videoDetails.comments}/>
+          {/* <h3 className="comment__title">3 Comments</h3>
+          <CommentForm videoDetails={props.videoComments}/>
           <ul className="comment__container">
           {props.videoDetails.comments.map((commentObj) => ( 
             <li className="comment__card" key={commentObj.id}>
@@ -22,7 +22,7 @@ function Comments (props) {
             </div>
             </li>
           ))}
-          </ul>
+          </ul> */}
       </section>
     )
   }
