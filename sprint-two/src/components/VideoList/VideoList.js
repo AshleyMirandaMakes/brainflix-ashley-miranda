@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-//import {API_URL, API_KEY, VIDEOS_LIST} from "../../util";
+import {API_URL, API_KEY, VIDEOS_LIST} from "../../util";
 
 import VideoItem from '../VideoItem';
 import './VideoList.scss';
@@ -12,10 +12,8 @@ class VideoList extends Component {
     videos: [],
   };
 
-  //check API KEY situation
   componentDidMount() {
-    axios.get("https://project-2-api.herokuapp.com/videos?api_key=2676221a-58c9-4883-a7b6-19edba276a48")
-    // axios.get(`${API_URL} + ${VIDEOS_LIST} + ${API_KEY}`)
+     axios.get(API_URL + VIDEOS_LIST + API_KEY)
     .then ((response) => {
       this.setState({
         videos : [...response.data]

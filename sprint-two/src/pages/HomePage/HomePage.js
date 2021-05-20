@@ -15,18 +15,21 @@ class HomePage extends Component {
    state = {
       // videos =[], // if you set this here it breaks.
       // currentVideoIndex : 0,
-      //currentVideoId : "1af0jruup5gu",
+      //videoId : "1af0jruup5gu",
       videoData : [],
+
    }
 
    componentDidMount() {
-    //  const {videoId} = this.props.match.params;
-    //  console.log(videoId);
+       const {videoId} = this.props.match.params;
+       console.log({videoId});
 
-     axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
+     axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
       .then(
         (response) =>
-        console.log(response)
+        this.setState({
+          videoData: response.data,
+        })
       )
       .catch(
         (error) =>
@@ -41,9 +44,12 @@ class HomePage extends Component {
  
 
   render () {
+    console.log(this.state.VideoData)
+    // const { title } = this.state.videoData;
+    // console.log(title)
     return (
       <main>
-      {/* <Video/> */}
+        {/* <Video />  */}
          {/* <Video 
             videoDetails={videoDetails[this.state.currentVideoIndex]}/> */}
           <div className="app__container">
