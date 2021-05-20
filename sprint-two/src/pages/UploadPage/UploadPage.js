@@ -10,7 +10,7 @@ function UploadPage () {
       <h4 className="upload__title">VIDEO THUMBNAIL</h4>
       <img className="upload__image "src={Thumbnail} alt="upload-image"/>
       </div>
-      <form className="upload__content">
+      <form className="upload__form">
         <div className="upload__form-container">
         <label className="upload__title">TITLE YOUR VIDEO</label>
         <input className="upload__input" type="text" placeholder="Add a title to your video"></input>
@@ -19,7 +19,7 @@ function UploadPage () {
         </div>
       </form>
       <div className="upload__button-container">
-      <button className="upload__button">COMMENT</button>
+      <button className="upload__button">PUBLISH</button>
         <button className="upload__button--special">CANCEL</button>
       </div>
       </section>

@@ -9,7 +9,8 @@ class VideoItem extends Component {
     const { id, image, title, channel } = this.props
 
     return (
-      <li className="videoItem" onClick={() =>{this.props.setCurrentVideo(id)}}>
+      // <li className="videoItem" onClick={() =>{this.props.setCurrentVideo(id)}}>
+      <li>
         <img className="videoItem__image" src={image} alt={title} />
         <div className="videoItem__headings">
           <h3 className="videoItem__title">{title}</h3> 
