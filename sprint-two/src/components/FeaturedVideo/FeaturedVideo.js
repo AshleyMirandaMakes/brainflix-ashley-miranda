@@ -5,8 +5,7 @@ import './FeaturedVideo.scss';
 //might not need this
 
 function FeaturedVideo (props) {
- console.log(props.videoComments)
-  //coming down
+  //console.log(props.currentVideoId)
     return (
       <div>
         <PlayingVideo videoDetails={props.videoDetails}/>

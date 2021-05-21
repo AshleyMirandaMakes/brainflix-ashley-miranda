@@ -4,7 +4,7 @@ import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
 import './Comments.scss';
 
 function Comments (props) {
-console.log(props.videoComments)
+  console.log(props.videoComments)
     return(
       <section className="comment">
           <h3 className="comment__title">3 Comments</h3>

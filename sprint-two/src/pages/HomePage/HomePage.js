@@ -11,16 +11,17 @@ class HomePage extends Component {
    state = {
     videos: [],
     videoData : [],
-    defaultVideo: '',
+    mainVideoId: '',
   };
 
   componentDidMount() {
-  const {videoId} = this.props.match.params;
-    console.log(videoId);
+  //const {VideoId} = this.props.match.params;
+  const id = this.props.match.params.videoId;
+  console.log(id);
   
-  //this sets up the default video'
-  if (this.state.defaultVideo === "" ) {
-     axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
+  //this sets up the default video' --- adjust this?
+  if (this.state.mainVideoId === "" ) {
+    axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
     .then(
       (response) =>
       this.setState({
@@ -36,19 +37,21 @@ class HomePage extends Component {
   //this sets up the next video component
   axios.get(API_URL + VIDEOS_LIST + API_KEY)
     .then ((response) => {
+      const videos = response.data.filter((video) => video.id !== id)
       this.setState({
-        videos : [...response.data]
-        
+        videos : videos,
+        mainVideoId: response.data[0],
       });    
     }).catch((error) =>
       console.log(error)
   );
     
   //this pull the video data if a video has been clicked
-  axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
+  axios.get(`${API_URL}/videos/${id}${API_KEY}`)
     .then((response) => {
         this.setState({
           videoData: [...response.data],
+          //? mainVideoId: response.data[0],
         })
       })
     .catch((error) => {
@@ -56,6 +59,7 @@ class HomePage extends Component {
        });
   };  
   
+  //on change
   componentDidUpdate(prevProps) {
     const {videoId} = this.props.match.params;
 
@@ -75,11 +79,14 @@ class HomePage extends Component {
   }
 
   render () {
-    console.log("Next Video Array", this.state.videos)
-    console.log("VideoData/CurrentVideo Array", this.state.videoData)
+    console.log("Next Videos", this.state.videos);
+    //console.log("main video", this.state.mainVideoId); //nothing
+    console.log("CurrentVideoId", this.state.videoData.id); // works
+
     
-    // if (this.state.videoData.id === video.id) {
-    //   this.state.videoData.filter((video) => video.id === video.id)};
+    // (this.state.videoData.id === this.state.videos.id) ?
+    //   (this.state.videos.filter((video) => video.id === video.id) :
+    //   ""
    
       // if (this.state.videoData.id === videoId) {
       //   return <main>Click on a video for more details</main>};
@@ -92,8 +99,9 @@ class HomePage extends Component {
       <main>
       <Video video={this.state.videoData.video} image={this.state.videoData.image}/>
            <div className="app__container"> 
-          <FeaturedVideo videoDetails={this.state.videoData} videoComments={this.state.videoData.comments}/> 
-              <VideoList videos={this.state.videos}/>
+          {this.state.videoData.comments && 
+          <FeaturedVideo videoDetails={this.state.videoData} videoComments={this.state.videoData.comments}/> }
+              <VideoList videos={this.state.videos} currentVideoId={this.state.videoData.id}/>
            </div>
       </main>
     )
