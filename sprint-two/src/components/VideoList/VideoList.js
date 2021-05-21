@@ -1,35 +1,17 @@
-import { Component } from "react";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
-import {API_URL, API_KEY, VIDEOS_LIST} from "../../util";
 
 import VideoItem from '../VideoItem';
 import './VideoList.scss';
 
 
-class VideoList extends Component {
-  state ={
-    videos: [],
-  };
-
-  componentDidMount() {
-     axios.get(API_URL + VIDEOS_LIST + API_KEY)
-    .then ((response) => {
-      this.setState({
-        videos : [...response.data]
-      });    
-    });
-  }
-
- render () {
-  //console.log(this.state.videos)
-  
+function VideoList (props) {
+    console.log(props.videos)
+    console.log(props.videos.id)
   return (
     <div className="videoList__container">
       <h4 className="videoList__title">NEXT VIDEO</h4>
         <nav className="videoList">{
-          this.state.videos
-          /* .filter((video) => video.id !== video.id)  */
+          props.videos
             .map((video) => (   
               <NavLink className="VideoList__link" key={video.id} to={"/videos/" + video.id}>
                 <VideoItem 
@@ -45,7 +27,10 @@ class VideoList extends Component {
      </nav>
    </div>  
   )   
-}
+
 }
 
+
 export default VideoList;
+
+ /* .filter((video) => video.id !== video.id)  */

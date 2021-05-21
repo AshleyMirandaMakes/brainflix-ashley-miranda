@@ -9,7 +9,6 @@ console.log(props.videoComments)
       <section className="comment">
           <h3 className="comment__title">3 Comments</h3>
           <CommentForm/>
-        
          {/* <ul className="comment__container">
           {props.videoComments.map((comment) => ( 
             <li className="comment__card" key={comment.id}>
