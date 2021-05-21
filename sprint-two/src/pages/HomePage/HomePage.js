@@ -22,43 +22,22 @@ class HomePage extends Component {
       this.setState({
         videos : [...response.data]
       });    
-    }).catch(
-      (error) =>
+    }).catch((error) =>
       console.log(error)
     );
-      if ({videoId}) { 
-      axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
-      .then(
-        (response) =>
+    
+    axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
+      .then((response) => {
         this.setState({
           videoData: [...response.data],
         })
-      )
-      .catch(
-        (error) =>
+      })
+      .catch((error) => {
         console.log(error)
-      );
-   }};  
+       });
+   };  
   
-   //  erase the two brackets above?
-  //  } else {
-  //   // axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
-  //   axios.get("https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=2676221a-58c9-4883-a7b6-19edba276a48")
-  //   .then(
-  //     (response) =>
-  //     this.setState({
-  //       videoData: response.data,
-  //     })
-  //   )
-  //   .catch(
-  //     (error) =>
-  //     console.log(error)
-  //   );
-  //  }
-  // };
-   //how can I add a condition to have the 1st video load if no :videoId has been selected? // also sometimes not iterable which makes sense
     
-
   componentDidUpdate(prevProps) {
     const {videoId} = this.props.match.params;
 
@@ -104,3 +83,20 @@ class HomePage extends Component {
 export default HomePage;
 
 
+   //  erase the two brackets above?
+  //  } else {
+  //   // axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
+  //   axios.get("https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=2676221a-58c9-4883-a7b6-19edba276a48")
+  //   .then(
+  //     (response) =>
+  //     this.setState({
+  //       videoData: response.data,
+  //     })
+  //   )
+  //   .catch(
+  //     (error) =>
+  //     console.log(error)
+  //   );
+  //  }
+  // };
+   //how can I add a condition to have the 1st video load if no :videoId has been selected? // also sometimes not iterable which makes sense

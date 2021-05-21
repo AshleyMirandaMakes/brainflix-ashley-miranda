@@ -5,8 +5,8 @@ import './VideoList.scss';
 
 
 function VideoList (props) {
-    console.log(props.videos)
-    console.log(props.videos.id)
+   //console.log(props.videos)
+   //console.log(props.videos.id)
   return (
     <div className="videoList__container">
       <h4 className="videoList__title">NEXT VIDEO</h4>
