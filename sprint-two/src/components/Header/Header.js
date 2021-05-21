@@ -2,7 +2,7 @@ import Nav from '../Nav';
 
 import './Header.scss';
 
-function Header(props) {
+function Header() {
   return (
     <header className="header">
       <div className="header__container">

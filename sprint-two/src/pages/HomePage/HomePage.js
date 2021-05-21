@@ -14,21 +14,42 @@ class HomePage extends Component {
    }
 
    componentDidMount() {
-       const {videoId} = this.props.match.params;
-       //console.log({videoId});
 
-     axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
+    const {videoId} = this.props.match.params;
+    //console.log({videoId});
+
+    if ({videoId}) { 
+      axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
       .then(
         (response) =>
         this.setState({
-          videoData: response.data,
+          videoData: [...response.data],
         })
       )
       .catch(
         (error) =>
         console.log(error)
       );
-   }
+   }};
+
+   //how can I add a condition to have the 1st video load if no :videoId has been selected? // also sometimes not iterable
+   //  erase the two brackets above?
+  //  } else {
+  //   // axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
+  //   axios.get("https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=2676221a-58c9-4883-a7b6-19edba276a48")
+  //   .then(
+  //     (response) =>
+  //     this.setState({
+  //       videoData: response.data,
+  //     })
+  //   )
+  //   .catch(
+  //     (error) =>
+  //     console.log(error)
+  //   );
+  //  }
+  // };
+    
 
   componentDidUpdate(prevProps) {
     const {videoId} = this.props.match.params;
@@ -48,13 +69,15 @@ class HomePage extends Component {
    }
   }
 
-
-
   render () {
-
+    
+    //this text is not rendering. why?
     if (this.state.videoData === null) {
-      return <main>Loading video...</main>;
-  }
+      return <main>Click on a video for more details</main>};
+   
+    // {!this.state.videoData? (
+    // <p>No Video Selected</p>) : ""
+    // } 
 
     return (
       <main>

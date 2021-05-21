@@ -34,10 +34,15 @@
       margin-right: 3rem;;
     }
   }
+  &__link {
+    @include link-reset;
+  }
   &__logo {
-    @include margin-auto;
+    //@include margin-auto;
     @include flex-center;
-    width: 45%;
+    width: 40%;
+    max-height: 500px;
+    padding: 0;
     @include large-phone {
      width: 25%;
     }

@@ -1,5 +1,5 @@
 import CommentForm from '../CommentForm';
-import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
+//import NumericMonthDayYearConverter from '../Functions/TimeFunctions';
 
 import './Comments.scss';
 
@@ -9,6 +9,7 @@ console.log(props.videoComments)
       <section className="comment">
           <h3 className="comment__title">3 Comments</h3>
           <CommentForm/>
+        
          {/* <ul className="comment__container">
           {props.videoComments.map((comment) => ( 
             <li className="comment__card" key={comment.id}>
@@ -27,4 +28,5 @@ console.log(props.videoComments)
     )
   }
 
+//why does it keep breaking upon reload up there? should I add state to just this component?
 export default Comments;
