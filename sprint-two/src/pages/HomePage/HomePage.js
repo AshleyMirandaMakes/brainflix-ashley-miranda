@@ -60,7 +60,7 @@ class HomePage extends Component {
       .then(
         (response) => {
         let filteredVideos = newVideos.filter((video) => video.id !== id)  
-        //console.log(newVideos) //this takes out all my videos one by one. :| WHYYY
+        //console.log(newVideos) //this takes out all my videos one by one. :| 
         this.setState({
           videoData: response.data,
           videos : filteredVideos,
