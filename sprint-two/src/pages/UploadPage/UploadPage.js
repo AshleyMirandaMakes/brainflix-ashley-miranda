@@ -53,26 +53,26 @@ class UploadPage extends Component {
           <form className="upload__form" 
             onSubmit={this.handleFormSubmit}>
             <div className="upload__form-container">
-            <label className="upload__title">TITLE YOUR VIDEO</label>
-            <input 
-              className="upload__input" 
-              type="text" 
-              name="uploadTitle" 
-              placeholder="Add a title to your video"
-              value={this.state.uploadTitle}
-              onChange={this.handleInputChange} />
-              {this.state.uploadTitle.length >1 && this.state.uploadTitle.length < 10 ? <p>Please enter a title with at least 10 letters.</p> : ''}
-            <label className="upload__title">ADD A VIDEO DESCRIPTION</label>
-            <input 
-              className="upload__textarea" 
-              type="text" 
-              name="uploadDescription" 
-              placeholder="Add a description of your video"
-              value={this.state.uploadDescription}
-              onChange={this.handleInputChange}/>
-              {this.state.uploadDescription.length 
-              > 1 && this.state.uploadDescription.length < 20 ? <p>Please enter a description with at least 20 letters.</p> : ''}
-            </div>
+              <label className="upload__title">TITLE YOUR VIDEO</label>
+              <input 
+                className="upload__input" 
+                type="text" 
+                name="uploadTitle" 
+                placeholder="Add a title to your video"
+                value={this.state.uploadTitle}
+                onChange={this.handleInputChange} />
+                {this.state.uploadTitle.length >1 && this.state.uploadTitle.length < 10 ? <p>Please enter a title with at least 10 letters.</p> : ''}
+              <label className="upload__title">ADD A VIDEO DESCRIPTION</label>
+              <input 
+                className="upload__textarea" 
+                type="text" 
+                name="uploadDescription" 
+                placeholder="Add a description of your video"
+                value={this.state.uploadDescription}
+                onChange={this.handleInputChange}/>
+                {this.state.uploadDescription.length 
+                > 1 && this.state.uploadDescription.length < 20 ? <p>Please enter a description with at least 20 letters.</p> : ''}
+              </div>  
           </form>
           </div>
         <div className="upload__button-container">

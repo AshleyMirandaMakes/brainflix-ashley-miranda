@@ -12,7 +12,7 @@ function VideoList (props) {
         <nav className="videoList">{
           props.videos
             .map((video) => (  
-              <NavLink className="VideoList__link" key={video.id} to={"/videos/" + video.id}>
+              <NavLink className="videoList__link" key={video.id} to={"/videos/" + video.id}>
                 <VideoItem 
                 key={video.id}
                 id={video.id}

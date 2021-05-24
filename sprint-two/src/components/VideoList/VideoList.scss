@@ -11,6 +11,11 @@
   @include tablet {
     width: 50%;
   }
+  &__link {
+    @include link-reset;
+    color: $color-black;
+    display: flex;
+  }
   &__container {
     padding: .5rem 1rem;
     @include tablet {

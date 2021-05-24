@@ -32,7 +32,9 @@
     @include desktop {
       @include margin-auto;
       max-width: 1280px;
-      margin-right: 3rem;
+      width: 100%;
+      margin-right: 0;
+      padding-right: 0;
     }
   }
   &__link {
@@ -57,7 +59,7 @@
     }
     @include desktop {
       width: 100%;
-      margin-left: 0;
+      margin-left: 0rem;
       padding: 0.5rem;
     }
   }

@@ -26,9 +26,7 @@ class App extends Component {
         <Header/>
           <Switch>
             <Redirect path="/home" to="/" />
-            {/* <Redirect path="/videos" to="/" /> */}
             <Route path="/" component={HomePage} exact />
-            {/* <Route path="/videos" component={HomePage} exact/> */}
             <Route path="/videos/:id" component={HomePage} />
             <Route path="/upload" component={UploadPage} />
             <Route component={NotFoundPage} />
@@ -38,8 +36,5 @@ class App extends Component {
   );
   }
 }
-
-//Route path="/videos/:videoId" component={VideoItem?}
-//
 
 export default App;

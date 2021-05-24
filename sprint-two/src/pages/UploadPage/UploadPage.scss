@@ -153,6 +153,7 @@
       flex-direction: row-reverse;
       width: 100%;
       margin-top: 4rem;
+      max-width: 767px;
     }
     @include desktop {
       @include margin-auto;
