@@ -9,91 +9,73 @@ import axios from 'axios';
 
 class HomePage extends Component {
    state = {
+    mainVideoId: '',
     videos: [],
     videoData : [],
-    mainVideoId: '',
   };
 
   componentDidMount() {
-  //const {VideoId} = this.props.match.params;
+  //const {id} = this.props.match.params;
   const id = this.props.match.params.videoId;
-  console.log(id);
-  
-  //this sets up the default video' --- adjust this?
-  if (this.state.mainVideoId === "" ) {
+
+   //this sets up the default video, when no video has been clicked
+   if (this.state.mainVideoId === "" ) {
     axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
     .then(
-      (response) =>
+      (response) => {
       this.setState({
         videoData: response.data,
-      })
+        mainVideoId: response.data[0],
+      })}
     )
     .catch(
       (error) =>
       console.log(error)
     );
   }
-    
-  //this sets up the next video component
-  axios.get(API_URL + VIDEOS_LIST + API_KEY)
-    .then ((response) => {
-      const videos = response.data.filter((video) => video.id !== id)
-      this.setState({
-        videos : videos,
-        mainVideoId: response.data[0],
-      });    
-    }).catch((error) =>
-      console.log(error)
-  );
-    
-  //this pull the video data if a video has been clicked
-  axios.get(`${API_URL}/videos/${id}${API_KEY}`)
-    .then((response) => {
-        this.setState({
-          videoData: [...response.data],
-          //? mainVideoId: response.data[0],
-        })
-      })
-    .catch((error) => {
-        console.log(error)
-       });
-  };  
   
+  //this sets up the next video component
+    axios.get(API_URL + VIDEOS_LIST + API_KEY)
+    .then ((response) => {
+      //this sometimes works and sometimes not.
+    const videos = response.data.filter((video) => video.id !== id)
+    this.setState({
+      videos : videos,
+      mainVideoId: response.data[0],
+    });
+  })    
+    .catch((error) =>
+      console.log(error)
+    );
+  }; 
+    
+
   //on change
   componentDidUpdate(prevProps) {
-    const {videoId} = this.props.match.params;
+    const {id} = this.props.match.params;
+   // you're not calling this right
+   // const {videos} = this.prevProps.videos
+   // console.log(videos)
 
-    if (prevProps.match.params.videoId !== videoId) {
-      axios.get(`${API_URL}/videos/${videoId}${API_KEY}`)
+    if (prevProps.match.params.id !== id) {
+      axios.get(`${API_URL}/videos/${id}${API_KEY}`)
       .then(
-        (response) =>
+        (response) => {
+          console.log(response.data)
+        const videoData = response.data.filter((video) => video.id !== id) //? I dunno 
         this.setState({
-          videoData: response.data,
+          videoData: videoData,
         })
-      )
+        })
       .catch(
         (error) =>
         console.log(error)
       );
    }
   }
+ 
 
   render () {
-    console.log("Next Videos", this.state.videos);
-    //console.log("main video", this.state.mainVideoId); //nothing
-    console.log("CurrentVideoId", this.state.videoData.id); // works
-
-    
-    // (this.state.videoData.id === this.state.videos.id) ?
-    //   (this.state.videos.filter((video) => video.id === video.id) :
-    //   ""
-   
-      // if (this.state.videoData.id === videoId) {
-      //   return <main>Click on a video for more details</main>};
-     
-    // {!this.state.videoData? (
-    // <p>No Video Selected</p>) : ""
-    // } 
 
     return (
       <main>
@@ -110,3 +92,59 @@ class HomePage extends Component {
 
 export default HomePage;
 
+  //this pull the video data on reset if a video has been clicked-
+  //I'm not sure I need this
+  // axios.get(`${API_URL}/videos/${id}${API_KEY}`)
+  //   .then((response) => {
+  //       this.setState({
+  //         videoData: [...response.data],
+  //         //? mainVideoId: response.data[0],
+  //       })
+  //     })
+  //   .catch((error) => {
+  //       console.log(error)
+  //      });
+  // };  
+
+  // if (id === " ") {
+  //   let videos = response.data.filter((video) => video.id === "1af0jruup5gu")
+  //   this.setState({
+  //     videos : videos,
+  //     mainVideoId: response.data[0],
+  //   });  
+  // } else {
+  // const videos = response.data.filter((video) => video.id !== id)
+  // this.setState({
+  //   videos : videos,
+  //   mainVideoId: response.data[0],
+  // }); 
+  // }
+
+   //on change
+  //  componentDidUpdate(prevProps, prevState) {
+  //   const {id} = this.props.match.params;
+  //   console.log(`${id} clicked video Id`);
+    // // const oldId = prevProps.match.params.videoId;
+    // // console.log(oldId);
+    // const id = prevProps.match.params.videoId;
+    // console.log(id, "prev props.params id");
+    // //console.log(videos)
+    // console.log(mainVideoId)
+  //infinite loop
+  //   if (id && prevState.mainVideoId !== id) {
+  //     axios.get(`${API_URL}/videos/${id}${API_KEY}`)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //       //videos.filter((video) => video.id ==! id )
+  //       this.setState({
+  //         mainVideoData: id,
+  //       //  videos : videos,
+  //       })
+  //       // console.log(videoData)
+  //     })
+  //     .catch(
+  //       (error) =>
+  //       console.log(error)
+  //     );
+  //  }
+  //  }

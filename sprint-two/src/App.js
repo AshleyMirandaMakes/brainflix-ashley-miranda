@@ -29,7 +29,7 @@ class App extends Component {
             {/* <Redirect path="/videos" to="/" /> */}
             <Route path="/" component={HomePage} exact />
             {/* <Route path="/videos" component={HomePage} exact/> */}
-            <Route path="/videos/:videoId" component={HomePage} />
+            <Route path="/videos/:id" component={HomePage} />
             <Route path="/upload" component={UploadPage} />
             <Route component={NotFoundPage} />
           </Switch>
