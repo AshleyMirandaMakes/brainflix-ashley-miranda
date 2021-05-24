@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/logos/Logo-brainflix.svg';
 import UserIcon from '../../assets/images/Mohan-muruge.jpg';
@@ -12,12 +12,10 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__container">
-      <NavLink to="/">
-        <img className="nav__logo" src={Logo} alt="Brainflix Logo"/>
-      </NavLink>
+      <Link className="nav__link" to="/"><img className="nav__logo" src={Logo} alt="BrainflixLogo"/></Link>
           <SearchBar value="Search"/>
           <div className="nav__bottom">
-          <NavLink to="/upload"><Button name="UPLOAD"/></NavLink>
+          <Link to="/upload"><Button name="UPLOAD"/></Link>
             <UserImage className="nav__image" src={UserIcon} image={UserIcon} />
           </div>
         </div>

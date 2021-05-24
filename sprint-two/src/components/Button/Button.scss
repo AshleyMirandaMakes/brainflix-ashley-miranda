@@ -8,7 +8,8 @@
   background-color: $color-lightblue-brainflix;
   border: none;
   color: $color-white;
-  width: 75%;
+  width: 224px;
+  height: 46px;
   border-radius: 5px;
   :hover {
     background-color: $color-darkblue-brainflix;
@@ -28,10 +29,11 @@
     margin-left: 1rem;
    }
   @include tablet {
-    width: 100px; 
+    width: 103px; 
     height: 44px;
-    margin-top: 0.1rem;
+    margin-top: 0;
     margin-left: 0;
+    margin-right: 0;
   }
   @include desktop {
     margin-right: 0;

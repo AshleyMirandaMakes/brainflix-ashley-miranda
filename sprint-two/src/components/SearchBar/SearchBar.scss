@@ -15,14 +15,14 @@
     margin-left: 1rem;
   }
   @include tablet {
-    width: 35%;
-    height: 44px;
-    margin-left: 11rem;
-    margin-right: 1rem;
-    padding: 1.25rem;
-    margin-top: .1rem;
+    width: 252px;
+    height: 46px;
+    margin-left: 8.5rem;
+    margin-right: 1.5rem;
+    padding: 1rem;
+    margin-top: 0;
   }
   @include desktop {
-    //margin-left: 20rem;
+    margin-left: 30rem;
   }
 }

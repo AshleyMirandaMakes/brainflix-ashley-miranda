@@ -13,8 +13,8 @@
     max-width: 430px;
     padding: 1rem;
     flex-direction: column;
-    height: 169px;
-    max-height: 169px;
+    height: 200px;
+    max-height: 300px;
     @include large-phone {
       @include margin-auto;
       display: flex;
@@ -27,36 +27,45 @@
       display: flex;
       flex-direction: row;
       max-height: 80px;
-      max-width: 730px;
+      max-width: 760px;
     }
     @include desktop {
       max-width: 1200px;
-      margin-right: 3rem;;
+      margin-right: 3rem;
     }
   }
   &__link {
     @include link-reset;
+    //visibility: hidden;
+    max-height: 0px;
+    padding: 0;
   }
   &__logo {
-    //@include margin-auto;
+    @include margin-auto;
     @include flex-center;
     width: 40%;
-    max-height: 500px;
+    max-height: 100px;
     padding: 0;
     @include large-phone {
-     width: 25%;
+      padding: 1rem 0;
+     width: 100%;
     }
     @include tablet {
-      width: 17%;
+      width: 100%;
+      padding: 1rem 0;
     }
     @include desktop {
-      width: 13%;
+      width: 100%;
       margin-left: 0;
+      padding: 0.5rem;
     }
   }
   &__bottom {
     display: flex;
     @include tablet {
+      width: 20%;
+    }
+    @include desktop{
       width: 25%;
     }
   }
@@ -66,6 +75,13 @@
     border-radius: 50%;
     margin-left: .5rem;
     object-fit: cover;
+    @include tablet {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    @include desktop {
+      margin-left: .75rem;
+    }
     //background-position: 80% 0%;
   }
 }
