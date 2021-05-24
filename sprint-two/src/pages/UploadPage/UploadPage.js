@@ -77,7 +77,7 @@ class UploadPage extends Component {
           </div>
         <div className="upload__button-container">
         {!this.state.handleUploadSubmit? <Link to={"/"} className="upload__button" onClick={this.handleUploadSubmit}>PUBLISH</Link> : " "}
-          <button className="upload__button--special">CANCEL</button>
+          <button href="#" className="upload__button--special">CANCEL</button>
         </div>
         </section>
       </main>

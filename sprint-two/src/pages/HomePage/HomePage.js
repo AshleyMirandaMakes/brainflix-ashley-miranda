@@ -15,7 +15,6 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-  //const {id} = this.props.match.params;
   const id = this.props.match.params.videoId;
 
    //this sets up the default video, when no video has been clicked
@@ -37,7 +36,7 @@ class HomePage extends Component {
   //this sets up the next video component
     axios.get(API_URL + VIDEOS_LIST + API_KEY)
     .then ((response) => {
-      //this sometimes works and sometimes not.
+    //this sometimes works and sometimes not?
     const videos = response.data.filter((video) => video.id !== id)
     this.setState({
       videos : videos,
@@ -51,28 +50,29 @@ class HomePage extends Component {
     
 
   //on change
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const {id} = this.props.match.params;
-   // you're not calling this right
-   // const {videos} = this.prevProps.videos
-   // console.log(videos)
+    //console.log(this.state.videos);
+    let newVideos = [...this.state.videos]
 
     if (prevProps.match.params.id !== id) {
       axios.get(`${API_URL}/videos/${id}${API_KEY}`)
       .then(
         (response) => {
-          console.log(response.data)
-        const videoData = response.data.filter((video) => video.id !== id) //? I dunno 
+        let filteredVideos = newVideos.filter((video) => video.id !== id)  
+        //console.log(newVideos) //this takes out all my videos one by one. :| WHYYY
         this.setState({
-          videoData: videoData,
+          videoData: response.data,
+          videos : filteredVideos,
         })
+        return;
         })
       .catch(
         (error) =>
         console.log(error)
       );
-   }
-  }
+    }  
+  }  
  
 
   render () {
@@ -91,6 +91,5 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
 
  
