@@ -19,6 +19,7 @@ class HomePage extends Component {
 
    //this sets up the default video, when no video has been clicked
    if (this.state.mainVideoId === "" ) {
+     console.log("test")
     axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
     .then(
       (response) => {
@@ -30,16 +31,18 @@ class HomePage extends Component {
     .catch(
       (error) =>
       console.log(error)
-    );
+    );  
+  } else {
+      console.log("this runs when there is an id");
   }
   
   //this sets up the next video component
     axios.get(API_URL + VIDEOS_LIST + API_KEY)
     .then ((response) => {
     //this sometimes works and sometimes not?
-    const videos = response.data.filter((video) => video.id !== id)
+    //const videos = response.data.filter((video) => video.id !== id)
     this.setState({
-      videos : videos,
+      videos : response.data,
       mainVideoId: response.data[0],
     });
   })    
@@ -59,11 +62,11 @@ class HomePage extends Component {
       axios.get(`${API_URL}/videos/${id}${API_KEY}`)
       .then(
         (response) => {
-        let filteredVideos = newVideos.filter((video) => video.id !== id)  
+        //let filteredVideos = newVideos.filter((video) => video.id !== id)  
         //console.log(newVideos) //this takes out all my videos one by one. :| 
         this.setState({
           videoData: response.data,
-          videos : filteredVideos,
+        // videos : filteredVideos,
         })
         return;
         })
