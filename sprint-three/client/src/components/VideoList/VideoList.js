@@ -5,8 +5,6 @@ import './VideoList.scss';
 
 
 function VideoList (props) {
-  //console.log(props.currentVideoId);
-  //console.log(props.videos)
   return (
     <div className="videoList__container">
       <h4 className="videoList__title">NEXT VIDEO</h4>
@@ -32,5 +30,3 @@ function VideoList (props) {
 
 
 export default VideoList;
-
- /* .filter((video) => video.id !== video.id)  */
