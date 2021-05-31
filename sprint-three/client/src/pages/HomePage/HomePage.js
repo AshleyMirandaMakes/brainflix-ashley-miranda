@@ -16,33 +16,11 @@ class HomePage extends Component {
   componentDidMount() {
   const id = this.props.match.params.videoId;
 
-   //this sets up the default video, when no video has been clicked
-  //  if (this.state.mainVideoId === "" ) {
-  //    console.log("test")
-  //   axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`)
-  //   .then(
-  //     (response) => {
-  //     this.setState({
-  //       videoData: response.data,
-  //       mainVideoId: response.data[0],
-  //     })}
-  //   )
-  //   .catch(
-  //     (error) =>
-  //     console.log(error)
-  //   );  
-  // } else {
-  //     console.log("this runs when there is an id");
-  // }
-
+  //on reload
     axios.get("http://localhost:8081/")
     .then ((response) => {
-    //this sometimes works and sometimes not?
-    //const videos = response.data.filter((video) => video.id !== id)
-    console.log(response.data)
     this.setState({
       videos : response.data,
-      //videoData: response.data,
       mainVideoId: response.data[0],
     });
   })    
@@ -54,9 +32,7 @@ class HomePage extends Component {
   if (this.state.mainVideoId === "") {
     axios.get("http://localhost:8081/videos")
     .then ((response) => {
-    //this sometimes works and sometimes not?
-    //const videos = response.data.filter((video) => video.id !== id)
-    console.log(response.data)
+    //console.log(response.data)
     this.setState({
       videos : response.data,
       mainVideoId: response.data[0],
@@ -70,30 +46,32 @@ class HomePage extends Component {
 } 
     
 
-  //on change
-  // componentDidUpdate(prevProps, prevState) {
-  //   const {id} = this.props.match.params;
-  //   //console.log(this.state.videos);
-  //   let newVideos = [...this.state.videos]
+//  on change
+  componentDidUpdate(prevProps, prevState) {
+    const {id} = this.props.match.params;
+    console.log(id);
+    //let newVideos = [...this.state.videos]
 
-  //   if (prevProps.match.params.id !== id) {
-  //     axios.get(`${API_URL}/videos/${id}${API_KEY}`)
-  //     .then(
-  //       (response) => {
-  //       //let filteredVideos = newVideos.filter((video) => video.id !== id)  
-  //       //console.log(newVideos) //this takes out all my videos one by one. :| 
-  //       this.setState({
-  //         videoData: response.data,
-  //       // videos : filteredVideos,
-  //       })
-  //       return;
-  //       })
-  //     .catch(
-  //       (error) =>
-  //       console.log(error)
-  //     );
-  //   }  
-  // }  
+    if (prevProps.match.params.id !== id) {
+      axios.get(`http://localhost:8081/videos/${id}`)
+      .then(
+        (response) => {
+          console.log(response.data)
+        //let filteredVideos = newVideos.filter((video) => video.id !== id)  
+        //console.log(newVideos) //this takes out all my videos one by one. :| 
+        this.setState({
+        //  videos: response.data,
+          mainVideoId: response.data,
+        // videos : filteredVideos,
+        })
+        return;
+        })
+      .catch(
+        (error) =>
+        console.log(error)
+      );
+    }  
+  }  
  
 
   render () {

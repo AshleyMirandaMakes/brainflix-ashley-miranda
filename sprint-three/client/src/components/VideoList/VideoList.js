@@ -5,7 +5,7 @@ import './VideoList.scss';
 
 
 function VideoList (props) {
-  console.log(props.currentVideoId);
+  //console.log(props.currentVideoId);
   //console.log(props.videos)
   return (
     <div className="videoList__container">
