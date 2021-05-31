@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+}
+
+body {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  color: #323232;
+}
+
+.hero-header {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+}
+
+h1 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 767px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h4 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  h4 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+h5 {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+p {
+  font-size: 0.825rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.videoItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.75rem 0;
+}
+.videoItem__container {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+.videoItem__image {
+  min-width: 120px;
+  max-width: 120px;
+  max-height: 70px;
+  border-radius: 5px;
+}
+.videoItem__headings {
+  padding: 0rem 1rem;
+}
+.videoItem__title {
+  width: 135px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 767px) {
+  .videoItem__title {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    width: 200px;
+    white-space: normal;
+    overflow: none;
+    text-overflow: none;
+  }
+}
+.videoItem__channel {
+  margin-top: 0.5rem;
+  font-size: 0.825rem;
+}
+@media screen and (min-width: 767px) {
+  .videoItem__channel {
+    margin-top: 0.25rem;
+    font-size: 0.92rem;
+  }
+}/*# sourceMappingURL=VideoItem.css.map */

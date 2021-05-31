@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+}
+
+body {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  color: #323232;
+}
+
+.hero-header {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+}
+
+h1 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 767px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h4 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  h4 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+h5 {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+p {
+  font-size: 0.825rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+}
+.nav__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 430px;
+  padding: 1rem;
+  flex-direction: column;
+  height: 200px;
+  max-height: 300px;
+}
+@media screen and (min-width: 450px) {
+  .nav__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    max-height: 80px;
+    max-width: 676px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .nav__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    max-height: 80px;
+    max-width: 760px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+.nav__link {
+  text-decoration: none;
+  color: #FFFFFF;
+  max-height: 0px;
+  padding: 0;
+}
+.nav__logo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  max-height: 100px;
+  padding: 0;
+}
+@media screen and (min-width: 450px) {
+  .nav__logo {
+    padding: 1rem 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .nav__logo {
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__logo {
+    width: 100%;
+    margin-left: 0rem;
+    padding: 0.5rem;
+  }
+}
+.nav__bottom {
+  display: flex;
+}
+@media screen and (min-width: 767px) {
+  .nav__bottom {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__bottom {
+    width: 25%;
+  }
+}
+.nav__image {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 767px) {
+  .nav__image {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__image {
+    margin-left: 0.75rem;
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=Nav.css.map */

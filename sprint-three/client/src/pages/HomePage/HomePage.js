@@ -13,7 +13,7 @@ class HomePage extends Component {
   componentDidMount() {
 //  const id = this.props.match.params.videoId;
 
-    axios.get("http://localhost:8081/")
+    axios.get("http://localhost:8082/")
     .then ((response) => {
     this.setState({
       videos : response.data,
@@ -47,7 +47,7 @@ class HomePage extends Component {
     const {id} = this.props.match.params;
 
     if (prevProps.match.params.id !== id) {
-      axios.get(`http://localhost:8081/videos/${id}`)
+      axios.get(`http://localhost:8082/videos/${id}`)
       .then(
         (response) => {
           console.log(response.data)
@@ -60,7 +60,9 @@ class HomePage extends Component {
         (error) =>
         console.log(error)
       );
-    }  
+    }
+    
+    
   }  
  
 

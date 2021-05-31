@@ -1,0 +1,367 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+}
+
+body {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  color: #323232;
+}
+
+.hero-header {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+}
+
+h1 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 767px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h4 {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  h4 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+h5 {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+p {
+  font-size: 0.825rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.upload {
+  width: 100%;
+  border-top: 1px solid #E1E1E1;
+  padding: 1rem;
+}
+.upload__heading {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+@media screen and (min-width: 767px) {
+  .upload__heading {
+    padding-top: 1.25rem;
+    padding-bottom: 2.75rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__heading {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    padding-top: 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__flex-container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin-top: 0.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #AFAFAF;
+  }
+}
+.upload__image-container {
+  display: block;
+}
+@media screen and (min-width: 767px) {
+  .upload__image-container {
+    margin: 0 auto;
+    max-width: 767px;
+    padding-bottom: 0.82rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__image-container {
+    min-width: 33%;
+  }
+}
+.upload__title {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  color: #AFAFAF;
+  font-size: 0.72rem;
+  padding-bottom: 4px;
+  padding-top: 1rem;
+  display: block;
+}
+@media screen and (min-width: 767px) {
+  .upload__title {
+    font-size: 0.72rem;
+    padding-top: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__title {
+    font-size: 0.85rem;
+  }
+}
+.upload__image {
+  width: 288px;
+  height: 153px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-fit: center;
+     object-fit: center;
+  border-radius: 4px;
+}
+@media screen and (min-width: 767px) {
+  .upload__image {
+    margin-right: 0.5rem;
+    width: 344px;
+    height: 183px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__image {
+    margin-left: 0;
+    width: 400px;
+    height: auto;
+  }
+}
+.upload__include form-container {
+  display: block;
+}
+@media screen and (min-width: 767px) {
+  .upload__include form-container {
+    margin: 0 auto;
+    max-width: 767px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__include form-container {
+    width: 66%;
+    margin-left: 0.5rem;
+  }
+}
+.upload__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 767px) {
+  .upload__form {
+    padding-left: 0.5rem;
+  }
+}
+.upload__input {
+  display: block;
+  color: #323232;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 767px) {
+  .upload__input {
+    padding: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__input {
+    padding: 1rem;
+  }
+}
+.upload__textarea {
+  display: block;
+  height: 143px;
+  color: #323232;
+  resize: none;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+}
+.upload__textarea:active {
+  border: 2px solid #0095FF;
+}
+.upload__textarea:hover {
+  border: 1px solid #323232;
+}
+@media screen and (min-width: 767px) {
+  .upload__textarea {
+    text-align: initial;
+    height: 135px;
+    margin-right: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__textarea {
+    width: 100%;
+    height: 120px;
+  }
+}
+.upload__button-container {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .upload__button-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-top: 4rem;
+    max-width: 767px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__button-container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    padding-top: 2.5rem;
+  }
+}
+.upload__button {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #0095FF;
+  border-color: #0095FF;
+  display: block;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 0.75rem 6.75rem;
+  width: 100%;
+  height: 45px;
+}
+@media screen and (min-width: 767px) {
+  .upload__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    margin-left: 1rem;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__button {
+    border-color: #E1E1E1;
+    padding: 1rem;
+    height: 56px;
+    min-width: 160px;
+  }
+}
+.upload__button--special {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 600;
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #0095FF;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 45px;
+}
+@media screen and (min-width: 767px) {
+  .upload__button--special {
+    width: 120px;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .upload__button--special {
+    height: 56px;
+  }
+}/*# sourceMappingURL=UploadPage.css.map */
