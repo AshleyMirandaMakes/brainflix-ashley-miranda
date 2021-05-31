@@ -62,7 +62,15 @@ class HomePage extends Component {
       );
     }
     
-    
+    if(prevState.videos.length !== this.state.videos.length) {
+      axios
+      .get("http://localhost:8082/videos")
+      .then(response => {
+        this.setState({
+          videos: response.data,
+        })
+      })
+    }  
   }  
  
 

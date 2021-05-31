@@ -1,20 +1,44 @@
 import Thumbnail from '../../assets/images/Upload-video-preview.jpg'
 import { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import './UploadPage.scss'
+import axios from 'axios';
 
 
 class UploadPage extends Component {
   state = {
     uploadTitle : "",
     uploadDescription : "",
+    toHomePage : false
   }
 
-  handleFormSubmit = (event) => {
+  alertMessage= () => {
+    alert("Video Uploaded!")
+  }
+
+  addNewVideo = (event) => {
     event.preventDefault();
-    console.log(event.target);
-
+    // const newVideo = {
+    //   title : event.target.uploadTitle.value,
+    //   description : event.target.uploadDescription.value
+    // }  
+    axios
+    .post("http://localhost:8082/videos", {
+      title : event.target.uploadTitle.value,
+      description : event.target.uploadDescription.value
+    })
+    .then((response) => {
+      console.log(response)
+      this.setState({
+        toHomePage : true,
+      })
+      this.alertMessage();
+    })
+    .catch((error) => {
+      console.log(`you have an ${error} right here`)
+    })
   }
+
 
   handleInputChange = (event) => {
     const {name, value} = event.target;
@@ -30,7 +54,7 @@ class UploadPage extends Component {
     }
  }
 
- handleUploadSubmit = () => {
+handleUploadSubmit = () => {
    if (!this.state.uploadTitle || !this.state.uploadDescription) {
      alert("Please enter the required inputs.");
      return;
@@ -40,6 +64,10 @@ class UploadPage extends Component {
  }
 
   render() {
+    if (this.state.addNewVideo === true) {
+      console.log("state has changed")
+      return (<Redirect to="/"></Redirect>);
+    } 
 
     return (
       <main>
@@ -51,7 +79,7 @@ class UploadPage extends Component {
           <img className="upload__image "src={Thumbnail} alt="upload-image"/>
           </div>
           <form className="upload__form" 
-            onSubmit={this.handleFormSubmit}>
+            onSubmit={this.addNewVideo}>
             <div className="upload__form-container">
               <label className="upload__title">TITLE YOUR VIDEO</label>
               <input 
@@ -72,12 +100,12 @@ class UploadPage extends Component {
                 onChange={this.handleInputChange}/>
                 {this.state.uploadDescription.length 
                 > 1 && this.state.uploadDescription.length < 20 ? <p>Please enter a description with at least 20 letters.</p> : ''}
-              </div>  
+              </div> 
+              <button type="submit" className="upload__button">PUBLISH</button>  
           </form>
           </div>
         <div className="upload__button-container">
-        {!this.state.handleUploadSubmit? <Link to={"/"} className="upload__button" onClick={this.handleUploadSubmit}>PUBLISH</Link> : " "}
-          <button href="#" className="upload__button--special">CANCEL</button>
+        <button className="upload__button--special">CANCEL</button>
         </div>
         </section>
       </main>
@@ -86,4 +114,8 @@ class UploadPage extends Component {
 
 }
 
+
 export default UploadPage;
+
+{/* <div className="upload__button-container">
+<button className="upload__button" onClick={this.handleUploadSubmit} >PUBLISH</button>  */}
