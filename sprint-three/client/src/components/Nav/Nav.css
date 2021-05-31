@@ -124,7 +124,7 @@ p {
   max-width: 430px;
   padding: 1rem;
   flex-direction: column;
-  height: 200px;
+  height: 180px;
   max-height: 300px;
 }
 @media screen and (min-width: 450px) {

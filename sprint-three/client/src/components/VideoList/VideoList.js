@@ -5,6 +5,7 @@ import './VideoList.scss';
 
 
 function VideoList (props) {
+  console.log(props.videos)
   return (
     <div className="videoList__container">
       <h4 className="videoList__title">NEXT VIDEO</h4>

@@ -17,11 +17,7 @@ class UploadPage extends Component {
   }
 
   addNewVideo = (event) => {
-    event.preventDefault();
-    // const newVideo = {
-    //   title : event.target.uploadTitle.value,
-    //   description : event.target.uploadDescription.value
-    // }  
+    event.preventDefault(); 
     axios
     .post("http://localhost:8082/videos", {
       title : event.target.uploadTitle.value,
@@ -64,7 +60,7 @@ handleUploadSubmit = () => {
  }
 
   render() {
-    if (this.state.addNewVideo === true) {
+    if (this.state.toHomePage === true) {
       console.log("state has changed")
       return (<Redirect to="/"></Redirect>);
     } 
