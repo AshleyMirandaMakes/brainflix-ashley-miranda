@@ -1,0 +1,207 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.upload {
+  width: 100%;
+  border-top: 1px solid $color-mercury;
+  padding: 1rem;
+  &__heading {
+    @include font-bold;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    @include tablet {
+      padding-top: 1.25rem;
+      padding-bottom: 2.75rem;
+    }
+    @include desktop {
+      @include margin-auto;
+      display: flex;
+      width: 100%;
+      max-width: 1280px;
+      padding-top: 2.5rem;
+    }
+  }
+  &__flex-container {
+    @include desktop {
+      @include margin-auto;
+      display: flex;
+      width: 100%;
+      max-width: 1280px;
+      margin-top: .25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $color-silver;
+    }
+  }
+  &__image-container{
+    display: block;
+    @include tablet {
+      @include margin-auto;
+      max-width: 767px;
+      padding-bottom: .82rem;
+    }
+    @include desktop {
+      min-width: 33%;
+    }
+  }
+  &__title {
+    @include font-demi;
+    color: $color-silver;
+    font-size: .72rem;
+    padding-bottom: 4px;
+    padding-top: 1rem;
+    display: block;
+    @include tablet {
+      font-size: .72rem;
+      padding-top: 1rem;
+    }
+    @include desktop {
+      font-size: .85rem;
+    }
+  }
+  &__image{
+    width: 288px;
+    height: 153px;
+    object-fit: cover;
+    object-fit: center;
+    border-radius: 4px;
+    @include tablet{
+      margin-right: .5rem;
+      width: 344px;
+      height: 183px;
+    }
+    @include desktop {
+      margin-left: 0;
+      width: 400px;
+      height: auto;
+    }
+  }
+  &__include form-container {
+    display: block;
+    @include tablet {
+      @include margin-auto;
+      max-width: 767px;
+    }
+    @include desktop {
+      width: 66%;
+      margin-left: .5rem;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: .5rem;
+    @include tablet {
+      padding-left: .5rem;
+   }
+  }  
+  &__input {
+    display: block;
+    color: $color-black;
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: .5rem;
+    border: 1px solid $color-mercury ;
+    border-radius: 4px;
+    background-color: $color-alabaster;
+    @include tablet {
+      padding: .85rem;
+      margin-bottom: 0.25rem;
+    }
+    @include desktop{
+      padding: 1rem;
+    }
+  }
+  &__textarea{
+    display: block;
+    height: 143px;
+    color: $color-black;
+    resize: none;
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    border: 1px solid $color-mercury ;
+    border-radius: 4px;
+    background-color: $color-alabaster;
+    &:active{
+    border: 2px solid $color-lightblue-brainflix;
+    //doesn't seem to work?
+    }
+    &:hover{
+      border: 1px solid $color-black;
+    }
+    @include tablet {
+      text-align: initial;
+      height: 135px;
+      margin-right: 1rem;
+      width: 100%;
+      padding-top: 1rem;
+    }
+    @include desktop {
+      width: 100%;
+      height: 120px;
+    }
+  }
+  &__button-container {
+    margin-top:.5rem;
+    width: 100%;
+    @include tablet {
+      @include margin-auto;
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      margin-top: 4rem;
+      max-width: 767px;
+    }
+    @include desktop {
+      @include margin-auto;
+      display: flex;
+      width: 100%;
+      max-width: 1280px;
+      padding-top: 2.5rem;
+    }
+  }
+  &__button{
+    @include font-demi;
+    @include link-reset;
+    //@include flex-center;
+    background-color: $color-lightblue-brainflix;
+    border-color: $color-lightblue-brainflix;
+    display: block;
+    color: $color-white;
+    border-radius: 4px;
+    padding: .75rem 6.75rem;
+    width: 100%;
+    height: 45px;
+    @include tablet {
+      @include flex-center;
+      width: 160px;
+      margin-left: 1rem;
+      padding: 0;
+    }
+    @include desktop {
+      border-color: $color-mercury; 
+      padding: 1rem;
+      height: 56px;
+      min-width: 160px;
+    }
+    &--special {
+      @include font-demi;
+      border-color: $color-white;
+      background-color: $color-white;
+      color: $color-lightblue-brainflix;
+      margin-top: .5rem;
+      width: 100%;
+      height: 45px;
+      @include tablet {
+        width: 120px;
+        margin-top: 0;
+      }
+      @include desktop {
+        height: 56px;
+      }
+    }
+  }
+}

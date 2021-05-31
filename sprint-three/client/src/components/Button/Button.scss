@@ -1,0 +1,41 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+.button {
+  @include font-demi;
+  background-color: $color-lightblue-brainflix;
+  border: none;
+  color: $color-white;
+  width: 224px;
+  height: 46px;
+  border-radius: 5px;
+  :hover {
+    background-color: $color-darkblue-brainflix;
+    border: $color-darkblue-brainflix;
+  }
+  &__icon {
+    padding-right: .5rem;
+    border: $color-lightblue-brainflix;
+  }
+  :hover {
+    background-color: $color-darkblue-brainflix;
+  }
+  @include large-phone {
+    width: 100px; 
+    height: 35px;
+    margin-top: .5rem;
+    margin-left: 1rem;
+   }
+  @include tablet {
+    width: 103px; 
+    height: 44px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include desktop {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,90 @@
+@use '../../partials/fonts.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/resets.scss' as *;
+
+
+.nav {
+  width: 100%;
+  display: flex;
+  &__container {
+    @include margin-auto;
+    width: 100%;
+    max-width: 430px;
+    padding: 1rem;
+    flex-direction: column;
+    height: 200px;
+    max-height: 300px;
+    @include large-phone {
+      @include margin-auto;
+      display: flex;
+      flex-direction: row;
+      max-height: 80px;
+      max-width: 676px;
+    }
+    @include tablet {
+      @include margin-auto;
+      display: flex;
+      flex-direction: row;
+      max-height: 80px;
+      max-width: 760px;
+    }
+    @include desktop {
+      @include margin-auto;
+      max-width: 1280px;
+      width: 100%;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+  &__link {
+    @include link-reset;
+    //visibility: hidden;
+    max-height: 0px;
+    padding: 0;
+  }
+  &__logo {
+    @include margin-auto;
+    @include flex-center;
+    width: 40%;
+    max-height: 100px;
+    padding: 0;
+    @include large-phone {
+      padding: 1rem 0;
+     width: 100%;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 1rem 0;
+    }
+    @include desktop {
+      width: 100%;
+      margin-left: 0rem;
+      padding: 0.5rem;
+    }
+  }
+  &__bottom {
+    display: flex;
+    @include tablet {
+      width: 20%;
+    }
+    @include desktop{
+      width: 25%;
+    }
+  }
+  &__image {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-left: .5rem;
+    object-fit: cover;
+    @include tablet {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    @include desktop {
+      margin-left: .75rem;
+      margin-right: 0;
+    }
+  }
+}

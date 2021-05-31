@@ -1,12 +1,95 @@
 const axios = require("axios");
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors");
+const { v4: uuidv4 } = require("uuid");
+const videoRoute = require("./routes/videos");
 
 const app = express();
 
-// const API_URL =" https://project-2-api.herokuapp.com";
-// const API_KEY = "?api_key=2676221a-58c9-4883-a7b6-19edba276a48";
-// const VIDEOS_LIST = "/videos";
+//prevents that error
+app.use(cors());
+//gets my static images, might not need /images
+app.use(express.static("./public/images"))
+//middleware?
+app.use((req, res, next) => {
+  console.log(`Incoming req from path ${req.path}`);
+  //no loop
+  next();
+});
+
+//validate request has header? I dunno whatever
+
+app.use((req, res, next) => {
+  if (
+    req.method === "POST" &&
+    req.headers["content-type"] !== "application/json"
+  ) {
+    return res.status(400).json({
+      message: "POST requests must contain content-type=application/json",
+    });
+  } else {
+    next();
+  }
+});
+
+app.use(express.json());
+
+app.use("/api/v1/videos", videoRoute);
+
+
+app.get('/videos', function(req, res) {
+  const videos = loadVideos();
+  res.json(videos);
+})
+
+
+
+function loadVideos() {
+  return JSON.parse(fs.readFileSync("./data/videos.json", "utf-8"));
+}
+
+
+//get a single video
+app.get('/videos/:video', function(req, res){
+  let myVideo = req.params.video;
+      console.log(myVideo);
+  if (videos.some(video => {
+      if (video.id === myVideo){
+          return true;
+      } else {
+          return false;
+      }
+  } )) {res.send("That video exists")} 
+      else {res.send("That video does not exist")}
+});
+
+
+
+app.listen(8081, () => {
+  console.log('Server is running on port 8081');
+})
+
+// const exampleVideo = {
+//   "id": "kjnepriwugxyowrgcheou1",
+//   "title" : "this is a video",
+//   "channel" : "this sucks",
+//   // "image" : "./public/images/Upload-video-preview.jpg"
+// }
+
+// //was videoList, worked.
+// app.get('/videos', function(req, res){
+//   res.json(videos);
+// });
+
+// //post a new video
+// app.post('/videos', function (req, res){
+//     // req.body is going to contain the post request data
+//     // 1. Read data from a file
+//     // 2. Push the new shoe from req.body into the array
+//     // 3. Write data to the file
+//     // 4. Respond!
+// })
 
 
 //this wrote my videos.json file?
@@ -23,37 +106,3 @@ const app = express();
 //   .catch((error) => {
 //     console.log(error)
 //   }); 
-
-
-// I have this file handy, but unsure.
-const videos = [
-    {
-      "id": "1af0jruup5gu",
-      "title": "BMX Rampage: 2018 Highlights",
-      "channel": "Red Cow",
-      "image": "https://i.imgur.com/l2Xfgpl.jpg"
-    },
-    {
-      "id": "1ainjruutd1j",
-      "title": "Become A Travel Pro In One Easy Lesson",
-      "channel": "Todd Welch",
-      "image": "https://i.imgur.com/5qyCZrD.jpg"
-    },
-    {
-      "id": "1aivjruutn6a",
-      "title": "Les Houches The Hidden Gem Of The Chamonix",
-      "channel": "Cornelia Blair",
-      "image": "https://i.imgur.com/yFS8EBr.jpg"
-    },
-  ];
-
-
-app.get('/videos', function(req, res) {
-  res.send("Sending a video");
-})
-
-
-
-app.listen(8080, () => {
-  console.log('Server is running on port 8080');
-});
