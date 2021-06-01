@@ -97,11 +97,11 @@ handleUploadSubmit = () => {
                 {this.state.uploadDescription.length 
                 > 1 && this.state.uploadDescription.length < 20 ? <p>Please enter a description with at least 20 letters.</p> : ''}
               </div> 
-              <button type="submit" className="upload__button">PUBLISH</button>  
+                <div className="upload__button-container">
+                  <button type="submit" className="upload__button">PUBLISH</button>  
+                  <a href="#" className="upload__button--special">CANCEL</a>
+                </div>
           </form>
-          </div>
-        <div className="upload__button-container">
-        <button className="upload__button--special">CANCEL</button>
         </div>
         </section>
       </main>
@@ -113,5 +113,3 @@ handleUploadSubmit = () => {
 
 export default UploadPage;
 
-{/* <div className="upload__button-container">
-<button className="upload__button" onClick={this.handleUploadSubmit} >PUBLISH</button>  */}

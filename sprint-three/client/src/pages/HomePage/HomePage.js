@@ -11,7 +11,7 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-//  const id = this.props.match.params.videoId;
+
 
     axios.get("http://localhost:8082/")
     .then ((response) => {
@@ -23,24 +23,7 @@ class HomePage extends Component {
     .catch((error) =>
       console.log(error)
     );
-  
-  
-  // if (this.state.mainVideoId === "") {
-  //   axios.get("http://localhost:8081/videos")
-  //   .then ((response) => {
-  //   //console.log(response.data)
-  //   this.setState({
-  //     videos : response.data,
-  //     mainVideoId: response.data[0],
-  //   });
-  // })    
-  //   .catch((error) =>
-  //     console.log(error)
-  //   );
-  // }; 
-  //if id selected, add route
-} 
-    
+  }  
 
 //  on change
   componentDidUpdate(prevProps, prevState) {
