@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
+const app = express();
 
 module.exports = router;
+
+//app.use(express.static("public"));
 
 router
   .route("/")

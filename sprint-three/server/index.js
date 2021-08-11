@@ -9,30 +9,14 @@ const app = express();
 
 //prevents that error
 app.use(cors());
-//gets my static images, might not need /images
-// doesn't exist
-// app.use(express.static("./public/images"))
-//middleware?
+
+//flips when in addition to image render.
+//app.use(express.static("public"));
+
 app.use((req, res, next) => {
   console.log(`Incoming req from path ${req.path}`);
-  //no loop
   next();
 });
-
-//validate request has header? I dunno whatever
-
-// app.use((req, res, next) => {
-//   if (
-//     req.method === "POST" &&
-//     req.headers["content-type"] !== "application/json"
-//   ) {
-//     return res.status(400).json({
-//       message: "POST requests must contain content-type=application/json",
-//     });
-//   } else {
-//     next();
-//   }
-// });
 
 app.use(express.json());
 
@@ -56,6 +40,7 @@ app.get('/videos', function(req, res) {
 app.post('/videos',  function(req, res) {
   const videos = loadVideos();
   const { title , description } = req.body;
+  console.log( title, description )
 
   if (!title) {
     return res.status(400).json({
@@ -69,11 +54,13 @@ app.post('/videos',  function(req, res) {
     });
   }
 
+  //https://i.imgur.com/i6S8m7I.jpg
+  //ok, I know the images should be coming from  <image: "http://localhost:8082/images/Upload-video-preview.jpg", but I can't get it to work without a complete shut down error. so I'm just putting one of the other images up.
   const newVideo = {
-    id: uuidv4,
-    title, // might be name
+    id: uuidv4(),
+    title, 
     channel: "Wild World",
-    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    image: "https://i.imgur.com/i6S8m7I.jpg",
     description,
     views: "1,466,325",
     likes: "1,456",
@@ -87,7 +74,7 @@ app.post('/videos',  function(req, res) {
   
   fs.writeFileSync("./data/videos.json", JSON.stringify(videos));
 
-  res.json(videos);
+  res.json((videos));
 });
 
 
@@ -124,19 +111,5 @@ app.listen(8082, () => {
 })
 
 
-
-// //was videoList, worked.
-// app.get('/videos', function(req, res){
-//   res.json(videos);
-// });
-
-// //post a new video
-// app.post('/videos', function (req, res){
-//     // req.body is going to contain the post request data
-//     // 1. Read data from a file
-//     // 2. Push the new shoe from req.body into the array
-//     // 3. Write data to the file
-//     // 4. Respond!
-// })
 
 

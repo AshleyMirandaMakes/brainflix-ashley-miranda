@@ -10,7 +10,7 @@ function VideoList (props) {
     <div className="videoList__container">
       <h4 className="videoList__title">NEXT VIDEO</h4>
         <nav className="videoList">{
-          props.videos
+          props.videos.length > 0 && props.videos
           .filter((video) => video.id !== props.currentVideoId)
             .map((video) => (  
               <NavLink className="videoList__link" key={video.id} to={"/videos/" + video.id}>
